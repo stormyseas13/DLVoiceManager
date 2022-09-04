@@ -13,14 +13,14 @@ I only spend time on this project to learn C#. So don't expect much.
 
 ## How to run
 1. Download the latest [Release]()
-2. Extract the auto extract archive and then simply run the GameManager.exe
+2. Extract the archive and then simply run the GameManager.exe
 
 ## Build from source
 1. Download the latest stable [Release]() or download the latest source code from the main [Branch]() (May not work correctly).
-2. Extract the file.
+2. Extract the archive.
 3. Open ".\src\GameManager.sln" in visual studio (Only tested on Visual Studio 2022 and 2019).
 4. Select which platform you want to use it for under "solution platform" (default 64-bit).
-5. Build the GameManager project.
+5. Build the GameManager Solution, Build --> Build Solution.
 6. The compiled binaries and other dependencies will appear in .\GameManager\bin\PLATFORM\Release
 
 
