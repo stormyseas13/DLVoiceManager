@@ -17,7 +17,7 @@ I only spend time on this project to learn C#. So don't expect much.
 2. Extract the archive and then simply run the GameManager.exe
 
 ## Build from source
-1. Download the source code from the latest stable [Relase](https://github.com/stormyseas13/DLVoiceManager/releases/latest) or download from the main [Branch](https://github.com/stormyseas13/DLVoiceManager/archive/refs/heads/main.zip) (May not work correctly).
+1. Download the source code from the latest stable [Release](https://github.com/stormyseas13/DLVoiceManager/releases/latest) or download from the main [Branch](https://github.com/stormyseas13/DLVoiceManager/archive/refs/heads/main.zip) (May not work correctly).
 2. Extract the archive.
 3. Open `.\src\GameManager.sln` in visual studio (Only tested on Visual Studio 2022 and 2019).
 4. Select which platform you want to use it for under "solution platform" (default 64-bit).
