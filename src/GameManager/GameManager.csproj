@@ -120,6 +120,7 @@
     <Compile Include="Source\AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\DarkMode.cs" />
     <Compile Include="Source\DupeDetectionForm.cs">
       <SubType>Form</SubType>
     </Compile>

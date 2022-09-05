@@ -2124,5 +2124,13 @@ namespace GameManager {
 
         [DllImport("user32.dll")]
         private static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
+
+        private void gameEditControl_Load(object sender, EventArgs e) {
+
+        }
+
+        private void splitContainer_SplitterMoved(object sender, SplitterEventArgs e) {
+
+        }
     }
 }
