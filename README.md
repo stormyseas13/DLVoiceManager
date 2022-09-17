@@ -1,5 +1,5 @@
 # DLVoiceManager
-Modifed and further improved version of the "DLsite GameManager0.3.3". A Windows application that helps you sort, rename and keep track of games, manga and voice works from Dlsite.
+Improved version of the "DLsite GameManager0.3.3", modified to work the best with voice works. A Windows application that helps you sort, rename and keep track of games, manga and voice works from Dlsite.
 
 I only spend time on this project to learn C#. So don't expect much. 
 #### These are the things that I've improved so far:
