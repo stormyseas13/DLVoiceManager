@@ -4,9 +4,9 @@ Improved version of the "DLsite GameManager0.3.3", modified to work the best wit
 I only spend time on this project to learn C#. So don't expect much. 
 #### These are the things that I've changed so far:
 - I changed the name and version number to keep it separate from the REAL modded versions
-- 64-bit version (In my experience it's much faster than the 32-bit version)
+- 64-bit version (In my experience it's much faster and more responsive than the 32-bit version)
 - Cleaned up the project with the use of nuget packages
-- Updated componetes to latest versions e.g. .NET 4.8 Framework, objectlistview, SQLite.
+- Updated componetes to latest versions e.g. DotNET 4.8 Framework, objectlistview, SQLite.
 - Fixed so category and tags displays correctly with the new dlsite website.
 
 ### **All credit to the previous maker and modders.**
