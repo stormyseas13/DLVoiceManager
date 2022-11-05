@@ -555,11 +555,12 @@ namespace GameManager {
             foreach (var f in dir.EnumerateFiles("*", SearchOption.AllDirectories)) {
                 string fName = f.Name;
                 string fFullName = f.FullName;
+
                 string fParentPath = System.IO.Directory.GetParent(fFullName).ToString();
                 string fNameWithoutExtension = System.IO.Path.GetFileNameWithoutExtension(fName);
                 string fNameExtension = System.IO.Path.GetExtension(fName);
                 string[] translatableExtensions = {".mp3", ".opus", ".oga", ".flac", ".wav", ".ogg", ".aac", ".opus", ".m4a", ".mp4" };
-
+                string[] charsToRemove = { "\"", "?", "\\", "/", "<", ">", "|", "*", ":" };
                 if (!translatableExtensions.Any(fNameExtension.Contains)) {
                     continue;
                 }
@@ -567,8 +568,8 @@ namespace GameManager {
                 var translatorTask3 = Task.Factory.StartNew(() => translator.TranslateString(fNameWithoutExtension));
                 var translated_fName = translatorTask3.Result + fNameExtension;
 
-                foreach (char c in System.IO.Path.GetInvalidFileNameChars()) {
-                    translated_fName = translated_fName.Replace(c, '_');
+                foreach (var c in charsToRemove) {
+                    translated_fName = translated_fName.Replace(c, string.Empty);
                 }
 
                 task = translatorTask3.ContinueWith(_ => {
@@ -598,10 +599,11 @@ namespace GameManager {
                     foreach (char c in System.IO.Path.GetInvalidPathChars()) {
                         translated_dName = translated_dName.Replace(c, ' ');
                     }
-                    if (translated_dName.Contains("RE429512")) {
+                    if (translated_dName.Contains("RE")) {
+                        Console.WriteLine("Changed!");
                         continue;
                     }
-                    task = translatorTask2.ContinueWith(_ => {
+                task = translatorTask2.ContinueWith(_ => {
                         try {
                             if (dName !=  translated_dName && translated_dName != null && translated_dName.Length > 0) {
                                 string translated_dFullName = System.IO.Path.Combine(dParentPath, translated_dName);
