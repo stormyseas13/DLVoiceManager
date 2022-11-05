@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -528,6 +529,111 @@ namespace GameManager {
             }
 
             return task;
+        }
+
+        public Task TranslateWorksPath() {
+            Task task = null;
+            var translator = new GoogleTranslate("ja", "en");
+            
+            DirectoryInfo dir;
+            string dirFullName;
+            string dirName;
+            string mainPath;
+            string parentPath;
+
+            mainPath = System.IO.Directory.GetParent(Path).ToString();
+            dir = new DirectoryInfo(mainPath);
+            dirFullName = dir.FullName;
+            dirName = dir.Name;
+            parentPath = System.IO.Directory.GetParent(mainPath).ToString();
+
+            if (!File.Exists(mainPath) && !Directory.Exists(mainPath) || mainPath == null) {
+                return null;
+            }
+
+            // Translates all files in a path
+            foreach (var f in dir.EnumerateFiles("*", SearchOption.AllDirectories)) {
+                string fName = f.Name;
+                string fFullName = f.FullName;
+                string fParentPath = System.IO.Directory.GetParent(fFullName).ToString();
+                string fNameWithoutExtension = System.IO.Path.GetFileNameWithoutExtension(fName);
+                string fNameExtension = System.IO.Path.GetExtension(fName);
+                string[] translatableExtensions = {".mp3", ".opus", ".oga", ".flac", ".wav", ".ogg", ".aac", ".opus", ".m4a", ".mp4" };
+
+                if (!translatableExtensions.Any(fNameExtension.Contains)) {
+                    continue;
+                }
+
+                var translatorTask3 = Task.Factory.StartNew(() => translator.TranslateString(fNameWithoutExtension));
+                var translated_fName = translatorTask3.Result + fNameExtension;
+
+                foreach (char c in System.IO.Path.GetInvalidFileNameChars()) {
+                    translated_fName = translated_fName.Replace(c, '_');
+                }
+
+                task = translatorTask3.ContinueWith(_ => {
+                    try {
+                        if (fName !=  translated_fName && translated_fName != null && translated_fName.Length > 0) {
+                            string translated_dFullName = System.IO.Path.Combine(fParentPath, translated_fName);
+                            Directory.Move(fFullName, translated_dFullName);
+                        }
+
+                    }
+                    catch (Exception e) {
+                        Logger.LogExceptionIfDebugging(e);
+                    }
+
+                }, TaskContinuationOptions.OnlyOnRanToCompletion);
+            }
+
+            // Translates all directiories in a path
+            foreach (var d in dir.EnumerateDirectories("*", SearchOption.AllDirectories)) {
+                    string dName = d.Name;
+                    string dFullName = d.FullName;
+                    string dParentPath = System.IO.Directory.GetParent(dFullName).ToString();
+
+                    var translatorTask2 = Task.Factory.StartNew(() => translator.TranslateString(dName));
+                    var translated_dName = translatorTask2.Result;
+
+                    foreach (char c in System.IO.Path.GetInvalidPathChars()) {
+                        translated_dName = translated_dName.Replace(c, ' ');
+                    }
+                    if (translated_dName.Contains("RE429512")) {
+                        continue;
+                    }
+                    task = translatorTask2.ContinueWith(_ => {
+                        try {
+                            if (dName !=  translated_dName && translated_dName != null && translated_dName.Length > 0) {
+                                string translated_dFullName = System.IO.Path.Combine(dParentPath, translated_dName);
+                                Directory.Move(dFullName, translated_dFullName);
+                            }
+     
+                        }
+                        catch (Exception e) {
+                            Logger.LogExceptionIfDebugging(e);
+                        }
+                       
+                    }, TaskContinuationOptions.OnlyOnRanToCompletion);
+            }
+
+            // Translates mainPath in a path
+            var translatorTask1 = Task.Factory.StartNew(() => translator.TranslateString(dirName));
+            var translated_dirName = translatorTask1.Result;
+            task = translatorTask1.ContinueWith(_ => {
+                try {
+                    if (dirName !=  translated_dirName && translated_dirName != null && translated_dirName.Length > 0) {
+                        string translated_dFullName = System.IO.Path.Combine(parentPath, translated_dirName);
+                        Directory.Move(dirFullName, translated_dFullName);
+                    }
+
+                }
+                catch (Exception e) {
+                    Logger.LogExceptionIfDebugging(e);
+                }
+
+            }, TaskContinuationOptions.OnlyOnRanToCompletion);
+
+         return task;
         }
 
         public override string ToString() {

@@ -1645,6 +1645,39 @@ namespace GameManager {
             }
         }
 
+        private void translateWork_Click(object sender, EventArgs e) {
+            var selectedGames = gameList.SelectedObjects.Cast<Game>();
+            var tasks = new List<Task>();
+
+            foreach (var g in selectedGames) {
+                var game = g;
+                var task = game.TranslateWorksPath();
+
+                tasks.Add(task);
+
+                task.ContinueWith(_ => {
+                    game.Save(false);
+                });
+            }
+
+            if (tasks.Count > 0) {
+                StatusBarText = "Translating works...";
+
+                //Refresh the list and scroll to the first translated item when the translation is complete
+                Task.Factory.ContinueWhenAll(tasks.ToArray(), _ => {
+                    StatusBarText = "";
+
+                    this.InvokeIfRequired(() => {
+                        gameList.BuildList(true);
+
+                        if (gameList.SelectedObjects.Count > 0) {
+                            gameList.EnsureModelVisible(gameList.SelectedObjects[0]);
+                        }
+                    });
+                });
+            }
+        }
+
         private void updatePathToolStripMenuItem_Click(object sender, EventArgs e) {
             var selectedGames = gameList.SelectedObjects.Cast<Game>();
 			foreach (var game in selectedGames) {
@@ -1660,6 +1693,7 @@ namespace GameManager {
 			}
 			StatusBarText = "Renaming finished";
         }
+
 
         private void downloadInfoToolStripMenuItem_Click(object sender, EventArgs e) {
 			StatusBarText = "";
@@ -2124,5 +2158,9 @@ namespace GameManager {
 
         [DllImport("user32.dll")]
         private static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
+
+        }
     }
 }
