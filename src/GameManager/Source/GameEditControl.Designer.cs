@@ -224,30 +224,35 @@ namespace GameManager {
             // showReleased
             // 
             this.showReleased.Name = "showReleased";
+            this.showReleased.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.showReleased.Size = new System.Drawing.Size(168, 24);
             this.showReleased.Text = "Released";
             // 
             // showTags
             // 
             this.showTags.Name = "showTags";
+            this.showTags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.showTags.Size = new System.Drawing.Size(168, 24);
             this.showTags.Text = "Tags";
             // 
             // showHVDBTags
             // 
             this.showHVDBTags.Name = "showHVDBTags";
+            this.showHVDBTags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.showHVDBTags.Size = new System.Drawing.Size(168, 24);
             this.showHVDBTags.Text = "HVDB Tags";
             // 
             // showCVs
             // 
             this.showCVs.Name = "showCVs";
+            this.showCVs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.showCVs.Size = new System.Drawing.Size(168, 24);
             this.showCVs.Text = "CVs";
             // 
             // showComments
             // 
             this.showComments.Name = "showComments";
+            this.showComments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.showComments.Size = new System.Drawing.Size(168, 24);
             this.showComments.Text = "Comments";
             // 
@@ -551,7 +556,7 @@ namespace GameManager {
             // 
             this.circleHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.circleHeader.AutoSize = true;
-            this.circleHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.circleHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.circleHeader.Location = new System.Drawing.Point(0, 66);
             this.circleHeader.Margin = new System.Windows.Forms.Padding(0);
             this.circleHeader.Name = "circleHeader";
@@ -563,7 +568,7 @@ namespace GameManager {
             // 
             this.dlsRatingHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dlsRatingHeader.AutoSize = true;
-            this.dlsRatingHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.dlsRatingHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.dlsRatingHeader.Location = new System.Drawing.Point(0, 246);
             this.dlsRatingHeader.Margin = new System.Windows.Forms.Padding(0);
             this.dlsRatingHeader.Name = "dlsRatingHeader";
@@ -575,7 +580,7 @@ namespace GameManager {
             // 
             this.ratingHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ratingHeader.AutoSize = true;
-            this.ratingHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ratingHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.ratingHeader.Location = new System.Drawing.Point(0, 216);
             this.ratingHeader.Margin = new System.Windows.Forms.Padding(0);
             this.ratingHeader.Name = "ratingHeader";
@@ -587,7 +592,7 @@ namespace GameManager {
             // 
             this.rjCodeHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rjCodeHeader.AutoSize = true;
-            this.rjCodeHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.rjCodeHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.rjCodeHeader.Location = new System.Drawing.Point(0, 6);
             this.rjCodeHeader.Margin = new System.Windows.Forms.Padding(0);
             this.rjCodeHeader.Name = "rjCodeHeader";
@@ -599,7 +604,7 @@ namespace GameManager {
             // 
             this.titleHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.titleHeader.AutoSize = true;
-            this.titleHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.titleHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.titleHeader.Location = new System.Drawing.Point(0, 36);
             this.titleHeader.Margin = new System.Windows.Forms.Padding(0);
             this.titleHeader.Name = "titleHeader";
@@ -674,7 +679,7 @@ namespace GameManager {
             // 
             this.commentsHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.commentsHeader.AutoSize = true;
-            this.commentsHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.commentsHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.commentsHeader.Location = new System.Drawing.Point(0, 426);
             this.commentsHeader.Margin = new System.Windows.Forms.Padding(0);
             this.commentsHeader.Name = "commentsHeader";
@@ -686,7 +691,7 @@ namespace GameManager {
             // 
             this.tagsHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tagsHeader.AutoSize = true;
-            this.tagsHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.tagsHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.tagsHeader.Location = new System.Drawing.Point(0, 396);
             this.tagsHeader.Margin = new System.Windows.Forms.Padding(0);
             this.tagsHeader.Name = "tagsHeader";
@@ -722,7 +727,7 @@ namespace GameManager {
             // 
             this.hvdbtagsHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.hvdbtagsHeader.AutoSize = true;
-            this.hvdbtagsHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.hvdbtagsHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.hvdbtagsHeader.Location = new System.Drawing.Point(0, 396);
             this.hvdbtagsHeader.Margin = new System.Windows.Forms.Padding(0);
             this.hvdbtagsHeader.Name = "hvdbtagsHeader";
@@ -758,7 +763,7 @@ namespace GameManager {
             // 
             this.cvsHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cvsHeader.AutoSize = true;
-            this.cvsHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.cvsHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150))))); ;
             this.cvsHeader.Location = new System.Drawing.Point(0, 396);
             this.cvsHeader.Margin = new System.Windows.Forms.Padding(0);
             this.cvsHeader.Name = "cvsHeader";
@@ -794,7 +799,7 @@ namespace GameManager {
             // 
             this.timesPlayedHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.timesPlayedHeader.AutoSize = true;
-            this.timesPlayedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.timesPlayedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.timesPlayedHeader.Location = new System.Drawing.Point(0, 276);
             this.timesPlayedHeader.Margin = new System.Windows.Forms.Padding(0);
             this.timesPlayedHeader.Name = "timesPlayedHeader";
@@ -806,7 +811,7 @@ namespace GameManager {
             // 
             this.timePlayedHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.timePlayedHeader.AutoSize = true;
-            this.timePlayedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.timePlayedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.timePlayedHeader.Location = new System.Drawing.Point(0, 306);
             this.timePlayedHeader.Margin = new System.Windows.Forms.Padding(0);
             this.timePlayedHeader.Name = "timePlayedHeader";
@@ -818,7 +823,7 @@ namespace GameManager {
             // 
             this.lastPlayedHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lastPlayedHeader.AutoSize = true;
-            this.lastPlayedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lastPlayedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lastPlayedHeader.Location = new System.Drawing.Point(0, 336);
             this.lastPlayedHeader.Margin = new System.Windows.Forms.Padding(0);
             this.lastPlayedHeader.Name = "lastPlayedHeader";
@@ -830,7 +835,7 @@ namespace GameManager {
             // 
             this.releasedHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.releasedHeader.AutoSize = true;
-            this.releasedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.releasedHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.releasedHeader.Location = new System.Drawing.Point(0, 366);
             this.releasedHeader.Margin = new System.Windows.Forms.Padding(0);
             this.releasedHeader.Name = "releasedHeader";
@@ -842,7 +847,7 @@ namespace GameManager {
             // 
             this.pathHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pathHeader.AutoSize = true;
-            this.pathHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.pathHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.pathHeader.Location = new System.Drawing.Point(0, 156);
             this.pathHeader.Margin = new System.Windows.Forms.Padding(0);
             this.pathHeader.Name = "pathHeader";
@@ -978,7 +983,7 @@ namespace GameManager {
             // 
             this.sizeHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.sizeHeader.AutoSize = true;
-            this.sizeHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.sizeHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.sizeHeader.Location = new System.Drawing.Point(0, 186);
             this.sizeHeader.Margin = new System.Windows.Forms.Padding(0);
             this.sizeHeader.Name = "sizeHeader";
@@ -999,7 +1004,7 @@ namespace GameManager {
             // 
             this.categoryHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.categoryHeader.AutoSize = true;
-            this.categoryHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.categoryHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.categoryHeader.Location = new System.Drawing.Point(0, 96);
             this.categoryHeader.Margin = new System.Windows.Forms.Padding(0);
             this.categoryHeader.Name = "categoryHeader";
@@ -1011,7 +1016,7 @@ namespace GameManager {
             // 
             this.languageHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.languageHeader.AutoSize = true;
-            this.languageHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.languageHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.languageHeader.Location = new System.Drawing.Point(0, 126);
             this.languageHeader.Margin = new System.Windows.Forms.Padding(0);
             this.languageHeader.Name = "languageHeader";

@@ -1,5 +1,7 @@
 using System.Runtime.InteropServices;
 using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace GameManager {
     partial class MainForm {
@@ -516,10 +518,10 @@ namespace GameManager {
             // 
             // searchBar
             // 
-            this.searchBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(112)))), ((int)(((byte)(173)))));
+            this.searchBar.BackColor = System.Drawing.Color.DarkRed;
             this.searchBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.searchBar.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.searchBar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.searchBar.ForeColor = System.Drawing.Color.Silver;
             this.searchBar.Location = new System.Drawing.Point(0, 521);
             this.searchBar.Margin = new System.Windows.Forms.Padding(5);
             this.searchBar.Name = "searchBar";
@@ -621,13 +623,11 @@ namespace GameManager {
             // rjCodeColumn
             // 
             this.rjCodeColumn.AspectName = "RJCode";
-            this.rjCodeColumn.CellVerticalAlignment = System.Drawing.StringAlignment.Center;
             this.rjCodeColumn.Groupable = false;
             this.rjCodeColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
             this.rjCodeColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.rjCodeColumn.IsEditable = false;
             this.rjCodeColumn.Text = "RJCode";
-            this.rjCodeColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.rjCodeColumn.UseFiltering = false;
             this.rjCodeColumn.Width = 75;
             // 
@@ -635,6 +635,8 @@ namespace GameManager {
             // 
             this.titleColumn.AspectName = "Title";
             this.titleColumn.CellPadding = new System.Drawing.Rectangle(0, 4, 0, 4);
+            this.titleColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.titleColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.titleColumn.IsEditable = false;
             this.titleColumn.Text = "Title";
             this.titleColumn.UseFiltering = false;
@@ -645,7 +647,8 @@ namespace GameManager {
             // circleColumn
             // 
             this.circleColumn.AspectName = "Author.Name";
-            this.circleColumn.HeaderForeColor = System.Drawing.Color.Black;
+            this.circleColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.circleColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.circleColumn.IsEditable = false;
             this.circleColumn.Text = "Circle";
             this.circleColumn.UseFiltering = false;
@@ -655,6 +658,8 @@ namespace GameManager {
             // 
             this.cvsColumn.AspectName = "CVs";
             this.cvsColumn.CellPadding = new System.Drawing.Rectangle(0, 4, 0, 4);
+            this.cvsColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.cvsColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.cvsColumn.IsEditable = false;
             this.cvsColumn.Text = "CVs";
             this.cvsColumn.UseFiltering = false;
@@ -664,6 +669,8 @@ namespace GameManager {
             // categoryColumn
             // 
             this.categoryColumn.AspectName = "Category";
+            this.categoryColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.categoryColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.categoryColumn.IsEditable = false;
             this.categoryColumn.Text = "Category";
             this.categoryColumn.UseFiltering = false;
@@ -672,6 +679,8 @@ namespace GameManager {
             // languageColumn
             // 
             this.languageColumn.AspectName = "Language";
+            this.languageColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.languageColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.languageColumn.IsEditable = false;
             this.languageColumn.Text = "Language";
             this.languageColumn.UseFiltering = false;
@@ -680,6 +689,8 @@ namespace GameManager {
             // ratingColumn
             // 
             this.ratingColumn.AspectName = "Rating";
+            this.ratingColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.ratingColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.ratingColumn.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ratingColumn.Searchable = false;
             this.ratingColumn.Text = "Rating";
@@ -690,6 +701,8 @@ namespace GameManager {
             // dlSiteRatingColumn
             // 
             this.dlSiteRatingColumn.AspectName = "DLSRating";
+            this.dlSiteRatingColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.dlSiteRatingColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.dlSiteRatingColumn.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dlSiteRatingColumn.IsEditable = false;
             this.dlSiteRatingColumn.Searchable = false;
@@ -703,6 +716,8 @@ namespace GameManager {
             this.sizeColumn.AspectName = "Size";
             this.sizeColumn.AspectToStringFormat = "{0} MB";
             this.sizeColumn.Groupable = false;
+            this.sizeColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.sizeColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.sizeColumn.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.sizeColumn.IsEditable = false;
             this.sizeColumn.Searchable = false;
@@ -714,6 +729,8 @@ namespace GameManager {
             // timesPlayedColumn
             // 
             this.timesPlayedColumn.AspectName = "TimesPlayed";
+            this.timesPlayedColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.timesPlayedColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.timesPlayedColumn.IsEditable = false;
             this.timesPlayedColumn.Searchable = false;
             this.timesPlayedColumn.Text = "Times Played";
@@ -724,6 +741,8 @@ namespace GameManager {
             // 
             this.timePlayedColumn.AspectName = "TimePlayed";
             this.timePlayedColumn.Groupable = false;
+            this.timePlayedColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.timePlayedColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.timePlayedColumn.IsEditable = false;
             this.timePlayedColumn.Searchable = false;
             this.timePlayedColumn.Text = "Time Played";
@@ -733,6 +752,8 @@ namespace GameManager {
             // lastPlayedColumn
             // 
             this.lastPlayedColumn.AspectName = "LastPlayedDate";
+            this.lastPlayedColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.lastPlayedColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.lastPlayedColumn.IsEditable = false;
             this.lastPlayedColumn.Searchable = false;
             this.lastPlayedColumn.Text = "Last Played";
@@ -742,6 +763,8 @@ namespace GameManager {
             // releasedColumn
             // 
             this.releasedColumn.AspectName = "ReleaseDate";
+            this.releasedColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.releasedColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.releasedColumn.IsEditable = false;
             this.releasedColumn.Searchable = false;
             this.releasedColumn.Text = "Released";
@@ -751,6 +774,8 @@ namespace GameManager {
             // addedColumn
             // 
             this.addedColumn.AspectName = "AddedDate";
+            this.addedColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.addedColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.addedColumn.IsEditable = false;
             this.addedColumn.Searchable = false;
             this.addedColumn.Text = "Added";
@@ -763,6 +788,8 @@ namespace GameManager {
             this.tagsColumn.CellPadding = new System.Drawing.Rectangle(0, 4, 0, 4);
             this.tagsColumn.FillsFreeSpace = true;
             this.tagsColumn.Groupable = false;
+            this.tagsColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.tagsColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.tagsColumn.IsEditable = false;
             this.tagsColumn.Sortable = false;
             this.tagsColumn.Text = "Tags";
@@ -775,6 +802,8 @@ namespace GameManager {
             this.hvdbtagsColumn.CellPadding = new System.Drawing.Rectangle(0, 4, 0, 4);
             this.hvdbtagsColumn.FillsFreeSpace = true;
             this.hvdbtagsColumn.Groupable = false;
+            this.hvdbtagsColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.hvdbtagsColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.hvdbtagsColumn.IsEditable = false;
             this.hvdbtagsColumn.Sortable = false;
             this.hvdbtagsColumn.Text = "HVDB Tags";
@@ -787,6 +816,8 @@ namespace GameManager {
             this.commentsColumn.CellPadding = new System.Drawing.Rectangle(0, 4, 0, 4);
             this.commentsColumn.FillsFreeSpace = true;
             this.commentsColumn.Groupable = false;
+            this.commentsColumn.HeaderForeColor = System.Drawing.SystemColors.Control;
+            this.commentsColumn.HeaderFormatStyle = this.headerFormatStyle;
             this.commentsColumn.IsEditable = false;
             this.commentsColumn.Sortable = false;
             this.commentsColumn.Text = "Comments";
@@ -838,6 +869,8 @@ namespace GameManager {
             ((System.ComponentModel.ISupportInitialize)(this.gameList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
+            DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
 
         }
 
@@ -908,8 +941,8 @@ namespace GameManager {
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         public BrightIdeasSoftware.OLVColumn imageColumn;
-        public BrightIdeasSoftware.OLVColumn rjCodeColumn;
         public BrightIdeasSoftware.HeaderFormatStyle headerFormatStyle;
+        private BrightIdeasSoftware.OLVColumn rjCodeColumn;
     }
 }
 
