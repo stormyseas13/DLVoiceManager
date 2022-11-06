@@ -535,107 +535,30 @@ namespace GameManager {
             Task task = null;
             var translator = new GoogleTranslate("ja", "en");
             
-            DirectoryInfo dir;
-            string dirFullName;
-            string dirName;
-            string mainPath;
-            string parentPath;
-
-            mainPath = System.IO.Directory.GetParent(Path).ToString();
-            dir = new DirectoryInfo(mainPath);
-            dirFullName = dir.FullName;
-            dirName = dir.Name;
-            parentPath = System.IO.Directory.GetParent(mainPath).ToString();
+            string mainPath = System.IO.Directory.GetParent(Path).ToString();
+            DirectoryInfo dir = new DirectoryInfo(mainPath);
 
             if (!File.Exists(mainPath) && !Directory.Exists(mainPath) || mainPath == null) {
+                Console.WriteLine(File.Exists(mainPath));
+                Console.WriteLine(Directory.Exists(mainPath));
                 return null;
             }
 
-            // Translates all files in a path
-            foreach (var f in dir.EnumerateFiles("*", SearchOption.AllDirectories)) {
-                string fName = f.Name;
-                string fFullName = f.FullName;
+            WorkPathTranslate worker = new WorkPathTranslate();
+            worker.directory = dir;
+            worker.task = task;
 
-                string fParentPath = System.IO.Directory.GetParent(fFullName).ToString();
-                string fNameWithoutExtension = System.IO.Path.GetFileNameWithoutExtension(fName);
-                string fNameExtension = System.IO.Path.GetExtension(fName);
-                string[] translatableExtensions = {".mp3", ".opus", ".oga", ".flac", ".wav", ".ogg", ".aac", ".opus", ".m4a", ".mp4" };
-                string[] charsToRemove = { "\"", "?", "\\", "/", "<", ">", "|", "*", ":" };
-                if (!translatableExtensions.Any(fNameExtension.Contains)) {
-                    continue;
-                }
+            worker.FilePathTranslate();
+            worker.FilePathTranslate();
+            worker.DirPathTranslate();
+            worker.DirPathTranslate();
+            worker.MainPathTranslate();
+            worker.MainPathTranslate();
 
-                var translatorTask3 = Task.Factory.StartNew(() => translator.TranslateString(fNameWithoutExtension));
-                var translated_fName = translatorTask3.Result + fNameExtension;
 
-                foreach (var c in charsToRemove) {
-                    translated_fName = translated_fName.Replace(c, string.Empty);
-                }
 
-                task = translatorTask3.ContinueWith(_ => {
-                    try {
-                        if (fName !=  translated_fName && translated_fName != null && translated_fName.Length > 0) {
-                            string translated_dFullName = System.IO.Path.Combine(fParentPath, translated_fName);
-                            Directory.Move(fFullName, translated_dFullName);
-                        }
-
-                    }
-                    catch (Exception e) {
-                        Logger.LogExceptionIfDebugging(e);
-                    }
-
-                }, TaskContinuationOptions.OnlyOnRanToCompletion);
-            }
-
-            // Translates all directiories in a path
-            foreach (var d in dir.EnumerateDirectories("*", SearchOption.AllDirectories)) {
-                    string dName = d.Name;
-                    string dFullName = d.FullName;
-                    string dParentPath = System.IO.Directory.GetParent(dFullName).ToString();
-
-                    var translatorTask2 = Task.Factory.StartNew(() => translator.TranslateString(dName));
-                    var translated_dName = translatorTask2.Result;
-
-                    foreach (char c in System.IO.Path.GetInvalidPathChars()) {
-                        translated_dName = translated_dName.Replace(c, ' ');
-                    }
-                    if (translated_dName.Contains("RE")) {
-                        Console.WriteLine("Changed!");
-                        continue;
-                    }
-                task = translatorTask2.ContinueWith(_ => {
-                        try {
-                            if (dName !=  translated_dName && translated_dName != null && translated_dName.Length > 0) {
-                                string translated_dFullName = System.IO.Path.Combine(dParentPath, translated_dName);
-                                Directory.Move(dFullName, translated_dFullName);
-                            }
-     
-                        }
-                        catch (Exception e) {
-                            Logger.LogExceptionIfDebugging(e);
-                        }
-                       
-                    }, TaskContinuationOptions.OnlyOnRanToCompletion);
-            }
-
-            // Translates mainPath in a path
-            var translatorTask1 = Task.Factory.StartNew(() => translator.TranslateString(dirName));
-            var translated_dirName = translatorTask1.Result;
-            task = translatorTask1.ContinueWith(_ => {
-                try {
-                    if (dirName !=  translated_dirName && translated_dirName != null && translated_dirName.Length > 0) {
-                        string translated_dFullName = System.IO.Path.Combine(parentPath, translated_dirName);
-                        Directory.Move(dirFullName, translated_dFullName);
-                    }
-
-                }
-                catch (Exception e) {
-                    Logger.LogExceptionIfDebugging(e);
-                }
-
-            }, TaskContinuationOptions.OnlyOnRanToCompletion);
-
-         return task;
+         
+        return worker.task;
         }
 
         public override string ToString() {
