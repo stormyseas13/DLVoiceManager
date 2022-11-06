@@ -555,9 +555,6 @@ namespace GameManager {
             worker.MainPathTranslate();
             worker.MainPathTranslate();
 
-
-
-         
         return worker.task;
         }
 
