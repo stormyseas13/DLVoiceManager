@@ -59,14 +59,15 @@ namespace GameManager {
                 string dName = d.Name;
                 string dFullName = d.FullName;
                 string dParentPath = System.IO.Directory.GetParent(dFullName).ToString();
+                string[] charsToRemove = { "\"", "?", "\\", "/", "<", ">", "|", "*", ":" };
                 Regex RECodePattern = new Regex(@"(RE)\d\d\d\d\d\d", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 
                 var translatorTask2 = Task.Factory.StartNew(() => translator.TranslateString(dName));
                 var translated_dName = translatorTask2.Result;
 
-                foreach (char c in System.IO.Path.GetInvalidPathChars()) {
-                    translated_dName = translated_dName.Replace(c, ' ');
+                foreach (var c in charsToRemove) {
+                    translated_dName = translated_dName.Replace(c, string.Empty);
                 }
                 if (RECodePattern.Match(translated_dName).Success) {
                     Console.WriteLine("Changed!");
@@ -92,9 +93,14 @@ namespace GameManager {
             string dirFullName = directory.FullName;
             string dirName = directory.Name;
             string parentPath = System.IO.Directory.GetParent(dirFullName).ToString();
+            string[] charsToRemove = { "\"", "?", "\\", "/", "<", ">", "|", "*", ":" };
 
             var translatorTask3 = Task.Factory.StartNew(() => translator.TranslateString(dirName));
             var translated_dirName = translatorTask3.Result;
+
+            foreach (var c in charsToRemove) {
+                translated_dirName = translated_dirName.Replace(c, string.Empty);
+            }
             task = translatorTask3.ContinueWith(_ => {
                 try {
                     if (dirName !=  translated_dirName && translated_dirName != null && translated_dirName.Length > 0) {
