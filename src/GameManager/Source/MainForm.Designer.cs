@@ -28,6 +28,8 @@ namespace GameManager {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+
+            DarkMode.UseImmersiveDarkMode(this.Handle, true);
             this.components = new System.ComponentModel.Container();
             BrightIdeasSoftware.HeaderStateStyle headerStateStyle1 = new BrightIdeasSoftware.HeaderStateStyle();
             BrightIdeasSoftware.HeaderStateStyle headerStateStyle2 = new BrightIdeasSoftware.HeaderStateStyle();
@@ -870,10 +872,7 @@ namespace GameManager {
             this.ResumeLayout(false);
             this.PerformLayout();
 
-            DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
-
         }
-
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;

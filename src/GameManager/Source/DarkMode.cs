@@ -4,45 +4,37 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GameManager.Source {
+namespace GameManager {
     public class DarkMode  {
-        private static bool UsingLightTheme() {
-            var registryKey = Registry.CurrentUser.OpenSubKey(
-                @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
-            var appsUseLightTheme = registryKey?.GetValue("AppsUseLightTheme");
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
 
-            if (appsUseLightTheme is null) {
-                return true;
+        private const int DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1 = 19;
+        private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
+
+        public static bool UseImmersiveDarkMode(IntPtr handle, bool enabled) {
+            if (IsWindows10OrGreater(17763)) {
+                var attribute = DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1;
+                if (IsWindows10OrGreater(18985)) {
+                    attribute = DWMWA_USE_IMMERSIVE_DARK_MODE;
+                }
+
+                int useImmersiveDarkMode = enabled ? 1 : 0;
+                return DwmSetWindowAttribute(handle, (int)attribute, ref useImmersiveDarkMode, sizeof(int)) == 0;
             }
-            else {
-                return Convert.ToBoolean(appsUseLightTheme,
-                    CultureInfo.InvariantCulture);
-            }
+
+            return false;
         }
 
-        public static void DarkTheme() {
-            if (!UsingLightTheme()) {
-                // styles for dark mode
-                var backgroundColor = Color.FromArgb(12, 12, 12);
-                var foregroundColor = Color.White;
-                var panelColor = Color.FromArgb(28, 28, 28);
-                var buttonColor = Color.FromArgb(44, 44, 44);
-                var actionButtonColor = Color.DodgerBlue;
-                var buttonBorderSize = 0;
-                var buttonFlatStyle = FlatStyle.Flat;
-                var textboxBorderStyle = BorderStyle.None;
-
-                // properties taken from the form designer
-                
-
-            }
-
+        private static bool IsWindows10OrGreater(int build = -1) {
+            return Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= build;
         }
 
-                
+
     }
 }
