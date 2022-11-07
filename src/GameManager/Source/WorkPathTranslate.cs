@@ -34,6 +34,8 @@ namespace GameManager {
                 foreach (var c in charsToRemove) {
                     translated_fName = translated_fName.Replace(c, string.Empty);
                 }
+                translated_fName = translated_fName.Replace("truck", "track");
+                translated_fName = translated_fName.Replace("Truck", "Track");
 
                 task = translatorTask1.ContinueWith(_ => {
                     try {

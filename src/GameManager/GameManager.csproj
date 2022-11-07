@@ -225,6 +225,7 @@
     <Compile Include="Source\TweakedTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Source\WorkPathTranslate.cs" />
     <EmbeddedResource Include="Source\AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </EmbeddedResource>
