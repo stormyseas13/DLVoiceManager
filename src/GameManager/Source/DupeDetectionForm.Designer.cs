@@ -40,7 +40,7 @@ namespace GameManager {
             this.infoLabel.Location = new System.Drawing.Point(18, 16);
             this.infoLabel.Margin = new System.Windows.Forms.Padding(5, 10, 5, 0);
             this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(163, 17);
+            this.infoLabel.Size = new System.Drawing.Size(146, 16);
             this.infoLabel.TabIndex = 11;
             this.infoLabel.Text = "0 duplicate works found";
             // 
@@ -54,13 +54,18 @@ namespace GameManager {
             this.DuplicateGames.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DuplicateGames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.DuplicateGames.CellEditUseWholeCell = false;
             this.DuplicateGames.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.hiddenColumn,
             this.rjCodeColumn,
             this.titleColumn,
             this.reasonColumn});
+            this.DuplicateGames.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DuplicateGames.ForeColor = System.Drawing.SystemColors.Control;
             this.DuplicateGames.FullRowSelect = true;
             this.DuplicateGames.GridLines = true;
+            this.DuplicateGames.HideSelection = false;
             this.DuplicateGames.Location = new System.Drawing.Point(21, 49);
             this.DuplicateGames.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.DuplicateGames.Name = "DuplicateGames";
@@ -77,7 +82,6 @@ namespace GameManager {
             // 
             // hiddenColumn
             // 
-            this.hiddenColumn.CellPadding = null;
             this.hiddenColumn.IsVisible = false;
             this.hiddenColumn.MaximumWidth = 0;
             this.hiddenColumn.MinimumWidth = 0;
@@ -88,7 +92,6 @@ namespace GameManager {
             this.rjCodeColumn.AspectName = "RJCode";
             this.rjCodeColumn.AutoCompleteEditor = false;
             this.rjCodeColumn.AutoCompleteEditorMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.rjCodeColumn.CellPadding = null;
             this.rjCodeColumn.Groupable = false;
             this.rjCodeColumn.Text = "RJCode";
             this.rjCodeColumn.Width = 81;
@@ -98,7 +101,6 @@ namespace GameManager {
             this.titleColumn.AspectName = "Title";
             this.titleColumn.AutoCompleteEditor = false;
             this.titleColumn.AutoCompleteEditorMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.titleColumn.CellPadding = null;
             this.titleColumn.Groupable = false;
             this.titleColumn.IsEditable = false;
             this.titleColumn.Text = "Title";
@@ -107,7 +109,6 @@ namespace GameManager {
             // reasonColumn
             // 
             this.reasonColumn.AspectName = "Reason";
-            this.reasonColumn.CellPadding = null;
             this.reasonColumn.FillsFreeSpace = true;
             this.reasonColumn.Groupable = false;
             this.reasonColumn.IsEditable = false;
@@ -116,23 +117,26 @@ namespace GameManager {
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.okButton.Location = new System.Drawing.Point(585, 362);
             this.okButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(83, 30);
             this.okButton.TabIndex = 31;
             this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // DupeDetectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(686, 403);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.DuplicateGames);
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

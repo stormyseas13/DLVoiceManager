@@ -39,7 +39,6 @@ namespace GameManager {
             this.nameColumn.AspectName = "Name";
             this.nameColumn.AutoCompleteEditor = false;
             this.nameColumn.AutoCompleteEditorMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.nameColumn.CellPadding = null;
             this.nameColumn.FillsFreeSpace = true;
             this.nameColumn.Text = "Name";
             this.nameColumn.Width = 148;
@@ -49,7 +48,6 @@ namespace GameManager {
             this.rgCodeColumn.AspectName = "RGCode";
             this.rgCodeColumn.AutoCompleteEditor = false;
             this.rgCodeColumn.AutoCompleteEditorMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.rgCodeColumn.CellPadding = null;
             this.rgCodeColumn.Text = "RGCode";
             this.rgCodeColumn.Width = 81;
             // 
@@ -59,16 +57,21 @@ namespace GameManager {
             this.circleList.AllColumns.Add(this.nameColumn);
             this.circleList.AllColumns.Add(this.rgCodeColumn);
             this.circleList.AlternateRowBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.circleList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.circleList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.circleList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.circleList.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.circleList.CellEditUseWholeCell = false;
             this.circleList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.hiddenColumn,
             this.nameColumn,
             this.rgCodeColumn});
+            this.circleList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.circleList.ForeColor = System.Drawing.SystemColors.Control;
             this.circleList.FullRowSelect = true;
             this.circleList.GridLines = true;
+            this.circleList.HideSelection = false;
             this.circleList.Location = new System.Drawing.Point(12, 55);
             this.circleList.Name = "circleList";
             this.circleList.SelectColumnsOnRightClick = false;
@@ -81,53 +84,61 @@ namespace GameManager {
             this.circleList.UseOverlays = false;
             this.circleList.View = System.Windows.Forms.View.Details;
             this.circleList.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.circleList_CellEditFinishing);
+            this.circleList.SelectedIndexChanged += new System.EventHandler(this.circleList_SelectedIndexChanged);
             this.circleList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.circleList_KeyDown);
             // 
             // hiddenColumn
             // 
-            this.hiddenColumn.CellPadding = null;
             this.hiddenColumn.IsVisible = false;
             this.hiddenColumn.Width = 0;
             // 
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.okButton.ForeColor = System.Drawing.SystemColors.Control;
             this.okButton.Location = new System.Drawing.Point(142, 369);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(66, 28);
             this.okButton.TabIndex = 3;
             this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.cancelButton.ForeColor = System.Drawing.SystemColors.Control;
             this.cancelButton.Location = new System.Drawing.Point(214, 369);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(66, 28);
             this.cancelButton.TabIndex = 4;
             this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // newButton
             // 
             this.newButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.newButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.newButton.ForeColor = System.Drawing.SystemColors.Control;
             this.newButton.Location = new System.Drawing.Point(286, 369);
             this.newButton.Name = "newButton";
             this.newButton.Size = new System.Drawing.Size(66, 28);
             this.newButton.TabIndex = 5;
             this.newButton.Text = "New";
-            this.newButton.UseVisualStyleBackColor = true;
+            this.newButton.UseVisualStyleBackColor = false;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
+            this.infoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.infoLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.infoLabel.Location = new System.Drawing.Point(12, 9);
             this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(268, 34);
+            this.infoLabel.Size = new System.Drawing.Size(253, 32);
             this.infoLabel.TabIndex = 6;
             this.infoLabel.Text = "Double click a row to edit\r\nSelect a row and press \'delete\' to remove";
             // 
@@ -135,6 +146,7 @@ namespace GameManager {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(364, 409);
             this.ControlBox = false;
             this.Controls.Add(this.infoLabel);
@@ -142,6 +154,7 @@ namespace GameManager {
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.circleList);
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CircleEditor";

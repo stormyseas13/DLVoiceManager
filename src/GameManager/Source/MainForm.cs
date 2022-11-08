@@ -2132,5 +2132,9 @@ namespace GameManager {
         private void splitContainer_SplitterMoved(object sender, SplitterEventArgs e) {
 
         }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
+
+        }
     }
 }

@@ -28,12 +28,10 @@ namespace GameManager {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-
-            DarkMode.UseImmersiveDarkMode(this.Handle, true);
             this.components = new System.ComponentModel.Container();
-            BrightIdeasSoftware.HeaderStateStyle headerStateStyle1 = new BrightIdeasSoftware.HeaderStateStyle();
-            BrightIdeasSoftware.HeaderStateStyle headerStateStyle2 = new BrightIdeasSoftware.HeaderStateStyle();
-            BrightIdeasSoftware.HeaderStateStyle headerStateStyle3 = new BrightIdeasSoftware.HeaderStateStyle();
+            BrightIdeasSoftware.HeaderStateStyle headerStateStyle4 = new BrightIdeasSoftware.HeaderStateStyle();
+            BrightIdeasSoftware.HeaderStateStyle headerStateStyle5 = new BrightIdeasSoftware.HeaderStateStyle();
+            BrightIdeasSoftware.HeaderStateStyle headerStateStyle6 = new BrightIdeasSoftware.HeaderStateStyle();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openInExplorerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -287,7 +285,7 @@ namespace GameManager {
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actionToolStripMenuItem,
@@ -297,12 +295,13 @@ namespace GameManager {
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip.Size = new System.Drawing.Size(998, 28);
             this.menuStrip.TabIndex = 2;
+            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // actionToolStripMenuItem
             // 
+            this.actionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.actionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addGameToolStripMenuItem,
             this.addGamesToolStripMenuItem,
@@ -319,52 +318,68 @@ namespace GameManager {
             // 
             // addGameToolStripMenuItem
             // 
+            this.addGameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.addGameToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.addGameToolStripMenuItem.Name = "addGameToolStripMenuItem";
             this.addGameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.addGameToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.addGameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addGameToolStripMenuItem.Text = "Add work";
             this.addGameToolStripMenuItem.Click += new System.EventHandler(this.addGameToolStripMenuItem_Click);
             // 
             // addGamesToolStripMenuItem
             // 
+            this.addGamesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.addGamesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.addGamesToolStripMenuItem.Name = "addGamesToolStripMenuItem";
-            this.addGamesToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.addGamesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addGamesToolStripMenuItem.Text = "Add works";
             this.addGamesToolStripMenuItem.Click += new System.EventHandler(this.addGamesToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
+            this.toolStripSeparator7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.toolStripSeparator7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(206, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(221, 6);
             // 
             // extractCgGameToolStripMenuItem
             // 
+            this.extractCgGameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.extractCgGameToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.extractCgGameToolStripMenuItem.Name = "extractCgGameToolStripMenuItem";
-            this.extractCgGameToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.extractCgGameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.extractCgGameToolStripMenuItem.Text = "Extract CG";
             this.extractCgGameToolStripMenuItem.Click += new System.EventHandler(this.extractCgGameToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
+            this.toolStripSeparator8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.toolStripSeparator8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(206, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(221, 6);
             // 
             // findDuplicatesToolStripMenuItem
             // 
+            this.findDuplicatesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.findDuplicatesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.findDuplicatesToolStripMenuItem.Name = "findDuplicatesToolStripMenuItem";
-            this.findDuplicatesToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.findDuplicatesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.findDuplicatesToolStripMenuItem.Text = "Find Duplicates";
             this.findDuplicatesToolStripMenuItem.Click += new System.EventHandler(this.findDuplicatesToolStripMenuItem_Click);
             // 
             // toolStripSeparator9
             // 
+            this.toolStripSeparator9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.toolStripSeparator9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(206, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(221, 6);
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -382,8 +397,10 @@ namespace GameManager {
             // 
             // viewDetails
             // 
+            this.viewDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.viewDetails.Checked = true;
             this.viewDetails.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.viewDetails.ForeColor = System.Drawing.SystemColors.Control;
             this.viewDetails.Name = "viewDetails";
             this.viewDetails.Size = new System.Drawing.Size(169, 26);
             this.viewDetails.Text = "Details";
@@ -391,6 +408,8 @@ namespace GameManager {
             // 
             // viewTiles
             // 
+            this.viewTiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.viewTiles.ForeColor = System.Drawing.SystemColors.Control;
             this.viewTiles.Name = "viewTiles";
             this.viewTiles.Size = new System.Drawing.Size(169, 26);
             this.viewTiles.Text = "Tiles";
@@ -398,11 +417,15 @@ namespace GameManager {
             // 
             // toolStripSeparator5
             // 
+            this.toolStripSeparator5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.toolStripSeparator5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(166, 6);
             // 
             // viewSearchBar
             // 
+            this.viewSearchBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.viewSearchBar.ForeColor = System.Drawing.SystemColors.Control;
             this.viewSearchBar.Name = "viewSearchBar";
             this.viewSearchBar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.viewSearchBar.Size = new System.Drawing.Size(169, 26);
@@ -411,6 +434,7 @@ namespace GameManager {
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
@@ -419,6 +443,7 @@ namespace GameManager {
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statisticsToolStripMenuItem,
             this.aboutToolStripMenuItem});
@@ -429,6 +454,8 @@ namespace GameManager {
             // 
             // statisticsToolStripMenuItem
             // 
+            this.statisticsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.statisticsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
             this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.statisticsToolStripMenuItem.Text = "Statistics...";
@@ -436,6 +463,8 @@ namespace GameManager {
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.aboutToolStripMenuItem.Text = "About...";
@@ -471,19 +500,19 @@ namespace GameManager {
             // 
             // headerFormatStyle
             // 
-            headerStateStyle1.BackColor = System.Drawing.Color.Black;
-            headerStateStyle1.ForeColor = System.Drawing.SystemColors.Control;
-            headerStateStyle1.FrameColor = System.Drawing.Color.White;
-            this.headerFormatStyle.Hot = headerStateStyle1;
-            headerStateStyle2.BackColor = System.Drawing.Color.Transparent;
-            headerStateStyle2.ForeColor = System.Drawing.SystemColors.Control;
-            headerStateStyle2.FrameColor = System.Drawing.Color.Black;
-            headerStateStyle2.FrameWidth = 1F;
-            this.headerFormatStyle.Normal = headerStateStyle2;
-            headerStateStyle3.BackColor = System.Drawing.Color.Transparent;
-            headerStateStyle3.ForeColor = System.Drawing.SystemColors.Control;
-            headerStateStyle3.FrameColor = System.Drawing.Color.White;
-            this.headerFormatStyle.Pressed = headerStateStyle3;
+            headerStateStyle4.BackColor = System.Drawing.Color.Black;
+            headerStateStyle4.ForeColor = System.Drawing.SystemColors.Control;
+            headerStateStyle4.FrameColor = System.Drawing.Color.White;
+            this.headerFormatStyle.Hot = headerStateStyle4;
+            headerStateStyle5.BackColor = System.Drawing.Color.Transparent;
+            headerStateStyle5.ForeColor = System.Drawing.SystemColors.Control;
+            headerStateStyle5.FrameColor = System.Drawing.Color.Black;
+            headerStateStyle5.FrameWidth = 1F;
+            this.headerFormatStyle.Normal = headerStateStyle5;
+            headerStateStyle6.BackColor = System.Drawing.Color.Transparent;
+            headerStateStyle6.ForeColor = System.Drawing.SystemColors.Control;
+            headerStateStyle6.FrameColor = System.Drawing.Color.White;
+            this.headerFormatStyle.Pressed = headerStateStyle6;
             // 
             // splitContainer
             // 
@@ -555,7 +584,7 @@ namespace GameManager {
             this.gameList.AllColumns.Add(this.hvdbtagsColumn);
             this.gameList.AllColumns.Add(this.commentsColumn);
             this.gameList.AllowColumnReorder = true;
-            this.gameList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.gameList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.gameList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gameList.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.SingleClick;
             this.gameList.CellEditUseWholeCell = false;

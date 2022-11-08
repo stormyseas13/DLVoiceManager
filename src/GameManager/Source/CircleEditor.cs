@@ -160,5 +160,9 @@ namespace GameManager {
                 circleList.RemoveObjects(circleList.SelectedObjects);
             }
         }
+
+        private void circleList_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }

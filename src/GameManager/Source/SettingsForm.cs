@@ -415,7 +415,8 @@ namespace GameManager {
                 launchWithAgth.Checked = false;
         }
 
-        
+        private void SettingsForm_Load(object sender, EventArgs e) {
 
+        }
     }
 }

@@ -120,6 +120,9 @@
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="useHCodeForWolfGames.ToolTip" xml:space="preserve">
     <value>When running a Wolf RPG Maker game with AGTH, one of the following 
 lists of parameters will be used depending on its version:
@@ -130,9 +133,11 @@ lists of parameters will be used depending on its version:
 2.01:   /HBN*0@46BA03 /W1 /KF64:16
 1.31:   /HBN*0@454C6C /W1 /KF64:16</value>
   </data>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="renameOrganize.ToolTip" xml:space="preserve">
+    <value>When checked, \ can be used to specify folder structure relative to Main Folder. 
+Example: {category}\{circle}\{rjcode} {title}. 
+If unchecked or Main Folder is not set or work's folder is outside of Main Folder, only part of the template after last \ will be used for renaming</value>
+  </data>
   <metadata name="folderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>118, 17</value>
   </metadata>

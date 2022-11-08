@@ -31,12 +31,12 @@ namespace GameManager {
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.lookForRJCodeInPath = new System.Windows.Forms.CheckBox();
-			this.lookForRJCodeInNames = new System.Windows.Forms.CheckBox();
+            this.lookForRJCodeInNames = new System.Windows.Forms.CheckBox();
             this.lookForRJCodeInFile = new System.Windows.Forms.CheckBox();
             this.downloadAverageRating = new System.Windows.Forms.CheckBox();
-            this.useAlternativeDLSiteLanguage = new System.Windows.Forms.CheckBox();
             this.downloadCoverImage = new System.Windows.Forms.CheckBox();
             this.downloadSampleImages = new System.Windows.Forms.CheckBox();
+            this.useAlternativeDLSiteLanguage = new System.Windows.Forms.CheckBox();
             this.useGoogleTranslate = new System.Windows.Forms.CheckBox();
             this.tablessControl = new GameManager.TablessControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -48,11 +48,11 @@ namespace GameManager {
             this.browseButton = new System.Windows.Forms.Button();
             this.downloadOptionsGroup = new System.Windows.Forms.GroupBox();
             this.downloadTags = new System.Windows.Forms.CheckBox();
-			this.downloadReviewTags = new System.Windows.Forms.CheckBox();
-			this.downloadHVDBInfo = new System.Windows.Forms.CheckBox();
-			this.preferHVDBEnglishTitle = new System.Windows.Forms.CheckBox();
-			this.filterCVs = new System.Windows.Forms.CheckBox();
-			this.autoSetCategory = new System.Windows.Forms.CheckBox();
+            this.downloadReviewTags = new System.Windows.Forms.CheckBox();
+            this.downloadHVDBInfo = new System.Windows.Forms.CheckBox();
+            this.preferHVDBEnglishTitle = new System.Windows.Forms.CheckBox();
+            this.filterCVs = new System.Windows.Forms.CheckBox();
+            this.autoSetCategory = new System.Windows.Forms.CheckBox();
             this.gameTitleGroup = new System.Windows.Forms.GroupBox();
             this.useNeitherDLSite = new System.Windows.Forms.RadioButton();
             this.useJapaneseDLSite = new System.Windows.Forms.RadioButton();
@@ -95,22 +95,23 @@ namespace GameManager {
             this.lookForRJCodeInPath.Location = new System.Drawing.Point(12, 60);
             this.lookForRJCodeInPath.Margin = new System.Windows.Forms.Padding(5);
             this.lookForRJCodeInPath.Name = "lookForRJCodeInPath";
-            this.lookForRJCodeInPath.Size = new System.Drawing.Size(287, 21);
+            this.lookForRJCodeInPath.Size = new System.Drawing.Size(216, 20);
             this.lookForRJCodeInPath.TabIndex = 4;
             this.lookForRJCodeInPath.Text = "Look for RJCode in folder paths";
-            this.toolTip.SetToolTip(this.lookForRJCodeInPath, "The scanner should search every folder path in the specified folder for valid RJCodes.\r\n" +
-        "RJ, RE, VJ or BJ followed by four or more digits is considered a valid RJCode.");
+            this.toolTip.SetToolTip(this.lookForRJCodeInPath, "The scanner should search every folder path in the specified folder for valid RJC" +
+        "odes.\r\nRJ, RE, VJ or BJ followed by four or more digits is considered a valid RJ" +
+        "Code.");
             this.lookForRJCodeInPath.UseVisualStyleBackColor = true;
             // 
             // lookForRJCodeInNames
             // 
             this.lookForRJCodeInNames.AutoSize = true;
-            //this.lookForRJCodeInNames.Checked = true;
+            this.lookForRJCodeInNames.Checked = true;
             this.lookForRJCodeInNames.CheckState = System.Windows.Forms.CheckState.Checked;
             this.lookForRJCodeInNames.Location = new System.Drawing.Point(12, 82);
             this.lookForRJCodeInNames.Margin = new System.Windows.Forms.Padding(5);
             this.lookForRJCodeInNames.Name = "lookForRJCodeInNames";
-            this.lookForRJCodeInNames.Size = new System.Drawing.Size(287, 21);
+            this.lookForRJCodeInNames.Size = new System.Drawing.Size(270, 20);
             this.lookForRJCodeInNames.TabIndex = 5;
             this.lookForRJCodeInNames.Text = "Look for RJCode in file and folder names";
             this.toolTip.SetToolTip(this.lookForRJCodeInNames, "The scanner should search every path in the specified folder for valid RJCodes.\r\n" +
@@ -123,11 +124,11 @@ namespace GameManager {
             this.lookForRJCodeInFile.Location = new System.Drawing.Point(12, 104);
             this.lookForRJCodeInFile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.lookForRJCodeInFile.Name = "lookForRJCodeInFile";
-            this.lookForRJCodeInFile.Size = new System.Drawing.Size(228, 21);
+            this.lookForRJCodeInFile.Size = new System.Drawing.Size(214, 20);
             this.lookForRJCodeInFile.TabIndex = 6;
             this.lookForRJCodeInFile.Text = "Look for RJCode inside .txt files";
-            this.toolTip.SetToolTip(this.lookForRJCodeInFile, "The scanner should open and look for valid RJCodes in all text files in each work\'s" +
-        " directory.");
+            this.toolTip.SetToolTip(this.lookForRJCodeInFile, "The scanner should open and look for valid RJCodes in all text files in each work" +
+        "\'s directory.");
             this.lookForRJCodeInFile.UseVisualStyleBackColor = true;
             // 
             // downloadAverageRating
@@ -136,35 +137,22 @@ namespace GameManager {
             this.downloadAverageRating.Location = new System.Drawing.Point(12, 289);
             this.downloadAverageRating.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.downloadAverageRating.Name = "downloadAverageRating";
-            this.downloadAverageRating.Size = new System.Drawing.Size(188, 21);
+            this.downloadAverageRating.Size = new System.Drawing.Size(180, 20);
             this.downloadAverageRating.TabIndex = 5;
             this.downloadAverageRating.Text = "Download average rating";
             this.toolTip.SetToolTip(this.downloadAverageRating, "Download the average user score of each work.");
             this.downloadAverageRating.UseVisualStyleBackColor = true;
-            // 
-            // useAlternativeDLSiteLanguage
-            // 
-            this.useAlternativeDLSiteLanguage.AutoSize = true;
-            this.useAlternativeDLSiteLanguage.Checked = true;
-            this.useAlternativeDLSiteLanguage.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.useAlternativeDLSiteLanguage.Location = new System.Drawing.Point(5, 70);
-            this.useAlternativeDLSiteLanguage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.useAlternativeDLSiteLanguage.Name = "useAlternativeDLSiteLanguage";
-            this.useAlternativeDLSiteLanguage.Size = new System.Drawing.Size(416, 21);
-            this.useAlternativeDLSiteLanguage.TabIndex = 6;
-            this.useAlternativeDLSiteLanguage.Text = "Get title and tags in Japanese if English ones are unavailable";
-            this.useAlternativeDLSiteLanguage.UseVisualStyleBackColor = true;
-            this.useAlternativeDLSiteLanguage.CheckedChanged += new System.EventHandler(this.useAlternativeDLSiteLanguage_CheckedChanged);
             // 
             // downloadCoverImage
             // 
             this.downloadCoverImage.AutoSize = true;
             this.downloadCoverImage.Checked = true;
             this.downloadCoverImage.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.downloadCoverImage.ForeColor = System.Drawing.SystemColors.Control;
             this.downloadCoverImage.Location = new System.Drawing.Point(12, 180);
             this.downloadCoverImage.Margin = new System.Windows.Forms.Padding(5);
             this.downloadCoverImage.Name = "downloadCoverImage";
-            this.downloadCoverImage.Size = new System.Drawing.Size(338, 21);
+            this.downloadCoverImage.Size = new System.Drawing.Size(314, 20);
             this.downloadCoverImage.TabIndex = 1;
             this.downloadCoverImage.Text = "Download the DLSite cover image for each work";
             this.toolTip.SetToolTip(this.downloadCoverImage, "Automatically download and save every work\'s front page image from DLSite.\r\nThis " +
@@ -179,12 +167,26 @@ namespace GameManager {
             this.downloadSampleImages.Location = new System.Drawing.Point(12, 208);
             this.downloadSampleImages.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.downloadSampleImages.Name = "downloadSampleImages";
-            this.downloadSampleImages.Size = new System.Drawing.Size(355, 21);
+            this.downloadSampleImages.Size = new System.Drawing.Size(332, 20);
             this.downloadSampleImages.TabIndex = 2;
             this.downloadSampleImages.Text = "Download the DLSite sample images for each work";
             this.toolTip.SetToolTip(this.downloadSampleImages, "Automatically download and save every work\'s preview image collection.\r\nThis amou" +
         "nts to ~800 KB per game.");
             this.downloadSampleImages.UseVisualStyleBackColor = true;
+            // 
+            // useAlternativeDLSiteLanguage
+            // 
+            this.useAlternativeDLSiteLanguage.AutoSize = true;
+            this.useAlternativeDLSiteLanguage.Checked = true;
+            this.useAlternativeDLSiteLanguage.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.useAlternativeDLSiteLanguage.Location = new System.Drawing.Point(5, 70);
+            this.useAlternativeDLSiteLanguage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.useAlternativeDLSiteLanguage.Name = "useAlternativeDLSiteLanguage";
+            this.useAlternativeDLSiteLanguage.Size = new System.Drawing.Size(390, 20);
+            this.useAlternativeDLSiteLanguage.TabIndex = 6;
+            this.useAlternativeDLSiteLanguage.Text = "Get title and tags in Japanese if English ones are unavailable";
+            this.useAlternativeDLSiteLanguage.UseVisualStyleBackColor = true;
+            this.useAlternativeDLSiteLanguage.CheckedChanged += new System.EventHandler(this.useAlternativeDLSiteLanguage_CheckedChanged);
             // 
             // useGoogleTranslate
             // 
@@ -194,7 +196,7 @@ namespace GameManager {
             this.useGoogleTranslate.Location = new System.Drawing.Point(5, 98);
             this.useGoogleTranslate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.useGoogleTranslate.Name = "useGoogleTranslate";
-            this.useGoogleTranslate.Size = new System.Drawing.Size(402, 21);
+            this.useGoogleTranslate.Size = new System.Drawing.Size(324, 20);
             this.useGoogleTranslate.TabIndex = 7;
             this.useGoogleTranslate.Text = "Use Google Translate to translate Japanese titles";
             this.useGoogleTranslate.UseVisualStyleBackColor = true;
@@ -214,7 +216,7 @@ namespace GameManager {
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.tabPage1.Controls.Add(this.cancelButton1);
             this.tabPage1.Controls.Add(this.startScanButton);
             this.tabPage1.Controls.Add(this.infoLabel1);
@@ -231,6 +233,7 @@ namespace GameManager {
             // cancelButton1
             // 
             this.cancelButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton1.ForeColor = System.Drawing.SystemColors.Control;
             this.cancelButton1.Location = new System.Drawing.Point(485, 543);
             this.cancelButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelButton1.Name = "cancelButton1";
@@ -244,6 +247,7 @@ namespace GameManager {
             // 
             this.startScanButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.startScanButton.Enabled = false;
+            this.startScanButton.ForeColor = System.Drawing.SystemColors.Control;
             this.startScanButton.Location = new System.Drawing.Point(396, 543);
             this.startScanButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startScanButton.Name = "startScanButton";
@@ -256,24 +260,25 @@ namespace GameManager {
             // infoLabel1
             // 
             this.infoLabel1.AutoSize = true;
+            this.infoLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.infoLabel1.Location = new System.Drawing.Point(12, 14);
             this.infoLabel1.Margin = new System.Windows.Forms.Padding(5, 10, 5, 0);
             this.infoLabel1.Name = "infoLabel1";
-            this.infoLabel1.Size = new System.Drawing.Size(531, 34);
+            this.infoLabel1.Size = new System.Drawing.Size(497, 32);
             this.infoLabel1.TabIndex = 17;
-            this.infoLabel1.Text = "The specified folder and all of its subfolders will be scanned for works. \r\n" +
-    "The scanner will also look for RJCodes and use them to download info from DLSite" +
-    ".";
+            this.infoLabel1.Text = "The specified folder and all of its subfolders will be scanned for works. \r\nThe s" +
+    "canner will also look for RJCodes and use them to download info from DLSite.";
             // 
             // scanOptionsGroup
             // 
             this.scanOptionsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scanOptionsGroup.Controls.Add(this.lookForRJCodeInPath);
-			this.scanOptionsGroup.Controls.Add(this.lookForRJCodeInNames);
+            this.scanOptionsGroup.Controls.Add(this.lookForRJCodeInNames);
             this.scanOptionsGroup.Controls.Add(this.lookForRJCodeInFile);
             this.scanOptionsGroup.Controls.Add(this.selectedFolderPath);
             this.scanOptionsGroup.Controls.Add(this.browseButton);
+            this.scanOptionsGroup.ForeColor = System.Drawing.SystemColors.Control;
             this.scanOptionsGroup.Location = new System.Drawing.Point(15, 57);
             this.scanOptionsGroup.Margin = new System.Windows.Forms.Padding(11, 10, 11, 5);
             this.scanOptionsGroup.Name = "scanOptionsGroup";
@@ -294,6 +299,7 @@ namespace GameManager {
             // 
             // browseButton
             // 
+            this.browseButton.ForeColor = System.Drawing.SystemColors.Control;
             this.browseButton.Location = new System.Drawing.Point(205, 29);
             this.browseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.browseButton.Name = "browseButton";
@@ -308,15 +314,16 @@ namespace GameManager {
             this.downloadOptionsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.downloadOptionsGroup.Controls.Add(this.downloadTags);
-			this.downloadOptionsGroup.Controls.Add(this.downloadReviewTags);
-			this.downloadOptionsGroup.Controls.Add(this.downloadHVDBInfo);
-			this.downloadOptionsGroup.Controls.Add(this.preferHVDBEnglishTitle);
-			this.downloadOptionsGroup.Controls.Add(this.filterCVs);
-			this.downloadOptionsGroup.Controls.Add(this.autoSetCategory);
+            this.downloadOptionsGroup.Controls.Add(this.downloadReviewTags);
+            this.downloadOptionsGroup.Controls.Add(this.downloadHVDBInfo);
+            this.downloadOptionsGroup.Controls.Add(this.preferHVDBEnglishTitle);
+            this.downloadOptionsGroup.Controls.Add(this.filterCVs);
+            this.downloadOptionsGroup.Controls.Add(this.autoSetCategory);
             this.downloadOptionsGroup.Controls.Add(this.downloadAverageRating);
             this.downloadOptionsGroup.Controls.Add(this.gameTitleGroup);
             this.downloadOptionsGroup.Controls.Add(this.downloadCoverImage);
             this.downloadOptionsGroup.Controls.Add(this.downloadSampleImages);
+            this.downloadOptionsGroup.ForeColor = System.Drawing.SystemColors.Control;
             this.downloadOptionsGroup.Location = new System.Drawing.Point(15, 195);
             this.downloadOptionsGroup.Margin = new System.Windows.Forms.Padding(11, 10, 11, 5);
             this.downloadOptionsGroup.Name = "downloadOptionsGroup";
@@ -332,7 +339,7 @@ namespace GameManager {
             this.downloadTags.Location = new System.Drawing.Point(12, 235);
             this.downloadTags.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.downloadTags.Name = "downloadTags";
-            this.downloadTags.Size = new System.Drawing.Size(123, 21);
+            this.downloadTags.Size = new System.Drawing.Size(119, 20);
             this.downloadTags.TabIndex = 3;
             this.downloadTags.Text = "Download tags";
             this.downloadTags.UseVisualStyleBackColor = true;
@@ -343,7 +350,7 @@ namespace GameManager {
             this.downloadReviewTags.Location = new System.Drawing.Point(12, 262);
             this.downloadReviewTags.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.downloadReviewTags.Name = "downloadReviewTags";
-            this.downloadReviewTags.Size = new System.Drawing.Size(123, 21);
+            this.downloadReviewTags.Size = new System.Drawing.Size(161, 20);
             this.downloadReviewTags.TabIndex = 4;
             this.downloadReviewTags.Text = "Download review tags";
             this.downloadReviewTags.UseVisualStyleBackColor = true;
@@ -354,29 +361,29 @@ namespace GameManager {
             this.downloadHVDBInfo.Location = new System.Drawing.Point(292, 262);
             this.downloadHVDBInfo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.downloadHVDBInfo.Name = "downloadHVDBInfo";
-            this.downloadHVDBInfo.Size = new System.Drawing.Size(123, 21);
+            this.downloadHVDBInfo.Size = new System.Drawing.Size(155, 20);
             this.downloadHVDBInfo.TabIndex = 5;
             this.downloadHVDBInfo.Text = "Download HVDB info";
             this.downloadHVDBInfo.UseVisualStyleBackColor = true;
-            //
-			// preferHVDBEnglishTitle
+            // 
+            // preferHVDBEnglishTitle
             // 
             this.preferHVDBEnglishTitle.AutoSize = true;
             this.preferHVDBEnglishTitle.Location = new System.Drawing.Point(292, 316);
             this.preferHVDBEnglishTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 8);
             this.preferHVDBEnglishTitle.Name = "preferHVDBEnglishTitle";
-            this.preferHVDBEnglishTitle.Size = new System.Drawing.Size(97, 17);
+            this.preferHVDBEnglishTitle.Size = new System.Drawing.Size(176, 20);
             this.preferHVDBEnglishTitle.TabIndex = 7;
             this.preferHVDBEnglishTitle.Text = "Prefer HVDB English title";
             this.preferHVDBEnglishTitle.UseVisualStyleBackColor = true;
-            //
-			// filterCVs
+            // 
+            // filterCVs
             // 
             this.filterCVs.AutoSize = true;
             this.filterCVs.Location = new System.Drawing.Point(292, 289);
             this.filterCVs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 8);
             this.filterCVs.Name = "filterCVs";
-            this.filterCVs.Size = new System.Drawing.Size(97, 17);
+            this.filterCVs.Size = new System.Drawing.Size(86, 20);
             this.filterCVs.TabIndex = 6;
             this.filterCVs.Text = "Filter CVs";
             this.filterCVs.UseVisualStyleBackColor = true;
@@ -387,7 +394,7 @@ namespace GameManager {
             this.autoSetCategory.Location = new System.Drawing.Point(12, 316);
             this.autoSetCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 8);
             this.autoSetCategory.Name = "autoSetCategory";
-            this.autoSetCategory.Size = new System.Drawing.Size(97, 17);
+            this.autoSetCategory.Size = new System.Drawing.Size(205, 20);
             this.autoSetCategory.TabIndex = 4;
             this.autoSetCategory.Text = "Auto set category from DLSite";
             this.autoSetCategory.UseVisualStyleBackColor = true;
@@ -401,6 +408,7 @@ namespace GameManager {
             this.gameTitleGroup.Controls.Add(this.useNeitherDLSite);
             this.gameTitleGroup.Controls.Add(this.useJapaneseDLSite);
             this.gameTitleGroup.Controls.Add(this.useEnglishDLSite);
+            this.gameTitleGroup.ForeColor = System.Drawing.SystemColors.Control;
             this.gameTitleGroup.Location = new System.Drawing.Point(12, 35);
             this.gameTitleGroup.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.gameTitleGroup.Name = "gameTitleGroup";
@@ -416,7 +424,7 @@ namespace GameManager {
             this.useNeitherDLSite.Location = new System.Drawing.Point(276, 32);
             this.useNeitherDLSite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.useNeitherDLSite.Name = "useNeitherDLSite";
-            this.useNeitherDLSite.Size = new System.Drawing.Size(75, 21);
+            this.useNeitherDLSite.Size = new System.Drawing.Size(71, 20);
             this.useNeitherDLSite.TabIndex = 2;
             this.useNeitherDLSite.Text = "Neither";
             this.useNeitherDLSite.UseVisualStyleBackColor = true;
@@ -428,7 +436,7 @@ namespace GameManager {
             this.useJapaneseDLSite.Location = new System.Drawing.Point(133, 32);
             this.useJapaneseDLSite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.useJapaneseDLSite.Name = "useJapaneseDLSite";
-            this.useJapaneseDLSite.Size = new System.Drawing.Size(137, 21);
+            this.useJapaneseDLSite.Size = new System.Drawing.Size(132, 20);
             this.useJapaneseDLSite.TabIndex = 0;
             this.useJapaneseDLSite.Text = "Japanese DLSite";
             this.useJapaneseDLSite.UseVisualStyleBackColor = true;
@@ -441,7 +449,7 @@ namespace GameManager {
             this.useEnglishDLSite.Location = new System.Drawing.Point(5, 32);
             this.useEnglishDLSite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.useEnglishDLSite.Name = "useEnglishDLSite";
-            this.useEnglishDLSite.Size = new System.Drawing.Size(121, 21);
+            this.useEnglishDLSite.Size = new System.Drawing.Size(115, 20);
             this.useEnglishDLSite.TabIndex = 1;
             this.useEnglishDLSite.TabStop = true;
             this.useEnglishDLSite.Text = "English DLSite";
@@ -450,13 +458,14 @@ namespace GameManager {
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.tabPage2.Controls.Add(this.statusMessage);
             this.tabPage2.Controls.Add(this.infoLabel2);
             this.tabPage2.Controls.Add(this.cancelButton2);
             this.tabPage2.Controls.Add(this.addGamesButton);
             this.tabPage2.Controls.Add(this.errorMessage);
             this.tabPage2.Controls.Add(this.GamesFound);
+            this.tabPage2.ForeColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
@@ -470,34 +479,38 @@ namespace GameManager {
             this.statusMessage.AutoSize = true;
             this.statusMessage.Location = new System.Drawing.Point(12, 491);
             this.statusMessage.Name = "statusMessage";
-            this.statusMessage.Size = new System.Drawing.Size(0, 17);
+            this.statusMessage.Size = new System.Drawing.Size(0, 16);
             this.statusMessage.TabIndex = 10;
             // 
             // infoLabel2
             // 
             this.infoLabel2.AutoSize = true;
+            this.infoLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.infoLabel2.ForeColor = System.Drawing.SystemColors.Control;
             this.infoLabel2.Location = new System.Drawing.Point(12, 14);
             this.infoLabel2.Margin = new System.Windows.Forms.Padding(5, 10, 5, 0);
             this.infoLabel2.Name = "infoLabel2";
-            this.infoLabel2.Size = new System.Drawing.Size(268, 34);
+            this.infoLabel2.Size = new System.Drawing.Size(253, 32);
             this.infoLabel2.TabIndex = 9;
             this.infoLabel2.Text = "Double click an RJCode to edit\r\nSelect a row and press \'delete\' to remove";
             // 
             // cancelButton2
             // 
             this.cancelButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.cancelButton2.Location = new System.Drawing.Point(475, 543);
             this.cancelButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelButton2.Name = "cancelButton2";
             this.cancelButton2.Size = new System.Drawing.Size(93, 30);
             this.cancelButton2.TabIndex = 8;
             this.cancelButton2.Text = "Cancel";
-            this.cancelButton2.UseVisualStyleBackColor = true;
+            this.cancelButton2.UseVisualStyleBackColor = false;
             this.cancelButton2.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // addGamesButton
             // 
             this.addGamesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addGamesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.addGamesButton.Enabled = false;
             this.addGamesButton.Location = new System.Drawing.Point(376, 543);
             this.addGamesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -505,7 +518,7 @@ namespace GameManager {
             this.addGamesButton.Size = new System.Drawing.Size(93, 30);
             this.addGamesButton.TabIndex = 7;
             this.addGamesButton.Text = "Add works";
-            this.addGamesButton.UseVisualStyleBackColor = true;
+            this.addGamesButton.UseVisualStyleBackColor = false;
             this.addGamesButton.Click += new System.EventHandler(this.addGamesButton_Click);
             // 
             // errorMessage
@@ -513,7 +526,7 @@ namespace GameManager {
             this.errorMessage.AutoSize = true;
             this.errorMessage.Location = new System.Drawing.Point(12, 510);
             this.errorMessage.Name = "errorMessage";
-            this.errorMessage.Size = new System.Drawing.Size(0, 17);
+            this.errorMessage.Size = new System.Drawing.Size(0, 16);
             this.errorMessage.TabIndex = 5;
             // 
             // GamesFound
@@ -524,13 +537,18 @@ namespace GameManager {
             this.GamesFound.AlternateRowBackColor = System.Drawing.SystemColors.ButtonFace;
             this.GamesFound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GamesFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.GamesFound.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.GamesFound.CellEditUseWholeCell = false;
             this.GamesFound.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.hiddenColumn,
             this.rjCodeColumn,
             this.pathColumn});
+            this.GamesFound.Cursor = System.Windows.Forms.Cursors.Default;
+            this.GamesFound.ForeColor = System.Drawing.SystemColors.Control;
             this.GamesFound.FullRowSelect = true;
             this.GamesFound.GridLines = true;
+            this.GamesFound.HideSelection = false;
             this.GamesFound.Location = new System.Drawing.Point(15, 57);
             this.GamesFound.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.GamesFound.Name = "GamesFound";
@@ -549,7 +567,6 @@ namespace GameManager {
             // 
             // hiddenColumn
             // 
-            this.hiddenColumn.CellPadding = null;
             this.hiddenColumn.IsVisible = false;
             this.hiddenColumn.MaximumWidth = 0;
             this.hiddenColumn.MinimumWidth = 0;
@@ -560,7 +577,6 @@ namespace GameManager {
             this.rjCodeColumn.AspectName = "RJCode";
             this.rjCodeColumn.AutoCompleteEditor = false;
             this.rjCodeColumn.AutoCompleteEditorMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.rjCodeColumn.CellPadding = null;
             this.rjCodeColumn.Text = "RJCode";
             this.rjCodeColumn.Width = 81;
             // 
@@ -569,7 +585,6 @@ namespace GameManager {
             this.pathColumn.AspectName = "Path";
             this.pathColumn.AutoCompleteEditor = false;
             this.pathColumn.AutoCompleteEditorMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.pathColumn.CellPadding = null;
             this.pathColumn.FillsFreeSpace = true;
             this.pathColumn.IsEditable = false;
             this.pathColumn.Text = "Path";
@@ -579,6 +594,7 @@ namespace GameManager {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(592, 609);
             this.ControlBox = false;
             this.Controls.Add(this.tablessControl);

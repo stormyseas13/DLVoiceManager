@@ -31,34 +31,39 @@ namespace GameManager {
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(246, 157);
-            this.okButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.okButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.okButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.okButton.Location = new System.Drawing.Point(308, 196);
+            this.okButton.Margin = new System.Windows.Forms.Padding(2);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(79, 23);
+            this.okButton.Size = new System.Drawing.Size(99, 29);
             this.okButton.TabIndex = 8;
             this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // aboutText
             // 
             this.aboutText.AutoSize = true;
+            this.aboutText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.aboutText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutText.Location = new System.Drawing.Point(10, 10);
+            this.aboutText.ForeColor = System.Drawing.SystemColors.Control;
+            this.aboutText.Location = new System.Drawing.Point(12, 12);
             this.aboutText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.aboutText.Name = "aboutText";
-            this.aboutText.Size = new System.Drawing.Size(319, 135);
+            this.aboutText.Size = new System.Drawing.Size(389, 162);
             this.aboutText.TabIndex = 9;
             this.aboutText.Text = resources.GetString("aboutText.Text");
             // 
             // AboutDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(334, 189);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ClientSize = new System.Drawing.Size(418, 236);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.aboutText);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutDialog";
