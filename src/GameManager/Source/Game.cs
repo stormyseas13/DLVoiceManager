@@ -549,10 +549,7 @@ namespace GameManager {
             worker.task = task;
 
             worker.FilePathTranslate();
-            worker.FilePathTranslate();
             worker.DirPathTranslate();
-            worker.DirPathTranslate();
-            worker.MainPathTranslate();
             worker.MainPathTranslate();
 
         return worker.task;
