@@ -48,7 +48,6 @@ namespace GameManager {
             this.removeFromDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.translateWork = new System.Windows.Forms.ToolStripMenuItem();
             this.addRelevantMetadataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.actionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +74,7 @@ namespace GameManager {
             this.addGameDialog = new System.Windows.Forms.OpenFileDialog();
             this.headerFormatStyle = new BrightIdeasSoftware.HeaderFormatStyle();
             this.splitContainer = new GameManager.TweakedSplitContainer();
+            this.searchBar = new GameManager.SearchBar();
             this.gameList = new BrightIdeasSoftware.ObjectListView();
             this.imageColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.rjCodeColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -94,7 +94,6 @@ namespace GameManager {
             this.tagsColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.hvdbtagsColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.commentsColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.searchBar = new GameManager.SearchBar();
             this.gameEditControl = new GameManager.GameEditControl();
             this.contextMenuStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -128,7 +127,6 @@ namespace GameManager {
             this.removeToolStripMenuItem,
             this.toolStripSeparator4,
             this.propertiesToolStripMenuItem,
-            this.translateWork});
             this.addRelevantMetadataToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
             this.contextMenuStrip.Size = new System.Drawing.Size(283, 398);
@@ -268,13 +266,6 @@ namespace GameManager {
             this.propertiesToolStripMenuItem.Text = "Properties";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
-            // translateWork
-            // 
-            this.translateWork.Name = "translateWork";
-            this.translateWork.Size = new System.Drawing.Size(282, 24);
-            this.translateWork.Text = "Translate work";
-            this.translateWork.Click += new System.EventHandler(this.translateWork_Click);
-            //
             // addRelevantMetadataToolStripMenuItem
             // 
             this.addRelevantMetadataToolStripMenuItem.Name = "addRelevantMetadataToolStripMenuItem";
@@ -296,7 +287,6 @@ namespace GameManager {
             this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip.Size = new System.Drawing.Size(998, 28);
             this.menuStrip.TabIndex = 2;
-            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // actionToolStripMenuItem
             // 
@@ -488,8 +478,8 @@ namespace GameManager {
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.gameList);
             this.splitContainer.Panel1.Controls.Add(this.searchBar);
+            this.splitContainer.Panel1.Controls.Add(this.gameList);
             this.splitContainer.Panel1MinSize = 30;
             // 
             // splitContainer.Panel2
@@ -505,6 +495,21 @@ namespace GameManager {
             this.splitContainer.SplitterWidth = 15;
             this.splitContainer.TabIndex = 4;
             this.splitContainer.TabStop = false;
+            // 
+            // searchBar
+            // 
+            this.searchBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(236)))));
+            this.searchBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.searchBar.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.searchBar.Location = new System.Drawing.Point(0, 521);
+            this.searchBar.Margin = new System.Windows.Forms.Padding(5);
+            this.searchBar.Name = "searchBar";
+            this.searchBar.Size = new System.Drawing.Size(661, 44);
+            this.searchBar.TabIndex = 1;
+            this.searchBar.Visible = false;
+            this.searchBar.SearchTextChanged += new System.EventHandler(this.searchBar_SearchTextChanged);
+            this.searchBar.CommandKeyPressed += new System.Windows.Forms.KeyEventHandler(this.searchBar_CommandKeyPressed);
+            this.searchBar.VisibleChanged += new System.EventHandler(this.searchBar_VisibleChanged);
             // 
             // gameList
             // 
@@ -559,7 +564,7 @@ namespace GameManager {
             this.gameList.Name = "gameList";
             this.gameList.RowHeight = 50;
             this.gameList.ShowCommandMenuOnRightClick = true;
-            this.gameList.Size = new System.Drawing.Size(661, 521);
+            this.gameList.Size = new System.Drawing.Size(661, 565);
             this.gameList.SortGroupItemsByPrimaryColumn = false;
             this.gameList.TabIndex = 0;
             this.gameList.UseCompatibleStateImageBehavior = false;
@@ -757,21 +762,6 @@ namespace GameManager {
             this.commentsColumn.Text = "Comments";
             this.commentsColumn.UseFiltering = false;
             // 
-            // searchBar
-            // 
-            this.searchBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(236)))));
-            this.searchBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchBar.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.searchBar.Location = new System.Drawing.Point(0, 521);
-            this.searchBar.Margin = new System.Windows.Forms.Padding(5);
-            this.searchBar.Name = "searchBar";
-            this.searchBar.Size = new System.Drawing.Size(661, 44);
-            this.searchBar.TabIndex = 1;
-            this.searchBar.Visible = false;
-            this.searchBar.SearchTextChanged += new System.EventHandler(this.searchBar_SearchTextChanged);
-            this.searchBar.CommandKeyPressed += new System.Windows.Forms.KeyEventHandler(this.searchBar_CommandKeyPressed);
-            this.searchBar.VisibleChanged += new System.EventHandler(this.searchBar_VisibleChanged);
-            // 
             // gameEditControl
             // 
             this.gameEditControl.BackColor = System.Drawing.Color.Transparent;
@@ -887,7 +877,6 @@ namespace GameManager {
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripMenuItem translateWork;
         private System.Windows.Forms.ToolStripMenuItem addRelevantMetadataToolStripMenuItem;
     }
 }
