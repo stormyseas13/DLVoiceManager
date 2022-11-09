@@ -49,6 +49,7 @@ namespace GameManager {
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.translateWork = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRelevantMetadataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.actionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,6 +129,7 @@ namespace GameManager {
             this.toolStripSeparator4,
             this.propertiesToolStripMenuItem,
             this.translateWork});
+            this.addRelevantMetadataToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
             this.contextMenuStrip.Size = new System.Drawing.Size(283, 398);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
@@ -272,6 +274,13 @@ namespace GameManager {
             this.translateWork.Size = new System.Drawing.Size(282, 24);
             this.translateWork.Text = "Translate work";
             this.translateWork.Click += new System.EventHandler(this.translateWork_Click);
+            //
+            // addRelevantMetadataToolStripMenuItem
+            // 
+            this.addRelevantMetadataToolStripMenuItem.Name = "addRelevantMetadataToolStripMenuItem";
+            this.addRelevantMetadataToolStripMenuItem.Size = new System.Drawing.Size(282, 24);
+            this.addRelevantMetadataToolStripMenuItem.Text = "Add relevant metadata";
+            this.addRelevantMetadataToolStripMenuItem.Click += new System.EventHandler(this.addRelevantMetadataToolStripMenuItem_Click);
             // 
             // menuStrip
             // 
@@ -561,6 +570,7 @@ namespace GameManager {
             this.gameList.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.gameList_CellEditStarting);
             this.gameList.CellClick += new System.EventHandler<BrightIdeasSoftware.CellClickEventArgs>(this.gameList_CellClick);
             this.gameList.SelectionChanged += new System.EventHandler(this.gameList_SelectionChanged);
+            this.gameList.SelectedIndexChanged += new System.EventHandler(this.gameList_SelectedIndexChanged);
             this.gameList.SizeChanged += new System.EventHandler(this.gameList_SizeChanged);
             this.gameList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameList_KeyDown);
             // 
@@ -872,12 +882,13 @@ namespace GameManager {
         private System.Windows.Forms.ToolStripMenuItem translateToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem updatePathToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem renameWorksFolderToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem downloadInfoToolStripMenuItem;		
+		private System.Windows.Forms.ToolStripMenuItem downloadInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem translateWork;
+        private System.Windows.Forms.ToolStripMenuItem addRelevantMetadataToolStripMenuItem;
     }
 }
 

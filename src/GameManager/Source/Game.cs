@@ -556,6 +556,52 @@ namespace GameManager {
             worker.MainPathTranslate();
 
         return worker.task;
+
+        public Task addRelevantMetadata() {
+            DirectoryInfo directory = new DirectoryInfo(Path);
+            Task task = null;
+            TagLib.IPicture[] coverArt = null;
+            string[] metadataExtensions = { ".mp3", ".opus", ".oga", ".flac", ".wav", ".ogg", ".aac", ".opus", ".m4a", ".mp4" };
+            string[] coverArtExtensions = { ".jpg", ".jpeg", ".png" };
+
+            foreach (var p in directory.EnumerateFiles("*", SearchOption.AllDirectories)) {
+                if (coverArtExtensions.Any(p.Name.Contains)) {
+                    coverArt = new TagLib.IPicture[1];
+                    coverArt[0] = new TagLib.Picture(p.FullName);
+                    break;
+                }
+
+            }
+
+            foreach (var f in directory.EnumerateFiles("*", SearchOption.AllDirectories)) {
+
+                string filePath = f.FullName;
+                string fileName = f.Name;
+                string parentPath = System.IO.Directory.GetParent(filePath).FullName;
+
+                string[] parentDirName = { System.IO.Directory.GetParent(filePath).Name };
+                string parentParentDirName = System.IO.Directory.GetParent(parentPath).Name;
+
+
+                if (!metadataExtensions.Any(fileName.Contains)) {
+                    continue;
+                }
+
+
+                var file = TagLib.File.Create(filePath);
+                file.Tag.Title = fileName;
+                file.Tag.Artists = parentDirName;
+                file.Tag.Album = parentParentDirName;
+                file.Tag.Comment = string.Empty;
+                file.Tag.Genres = Array.Empty<string>();
+
+                if (coverArt != null) {
+                    file.Tag.Pictures = coverArt;
+             }
+
+                file.Save();
+            }
+         return task;
         }
 
         public override string ToString() {

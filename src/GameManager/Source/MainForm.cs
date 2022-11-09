@@ -1646,7 +1646,7 @@ namespace GameManager {
         }
 
         private void translateWork_Click(object sender, EventArgs e) {
-            var selectedGames = gameList.SelectedObjects.Cast<Game>();
+        var selectedGames = gameList.SelectedObjects.Cast<Game>();
             var tasks = new List<Task>();
 
             foreach (var g in selectedGames) {
@@ -1676,6 +1676,17 @@ namespace GameManager {
                     });
                 });
             }
+        private void addRelevantMetadataToolStripMenuItem_Click(object sender, EventArgs e) {
+            var selectedGames = gameList.SelectedObjects.Cast<Game>();
+            var tasks = new List<Task>();
+
+            foreach (var g in selectedGames) {
+                var game = g;
+                var task = game.addRelevantMetadata();
+
+                tasks.Add(task);
+            }
+            StatusBarText = "Added relevant metadata";
         }
 
         private void updatePathToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -2160,7 +2171,8 @@ namespace GameManager {
         private static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
 
         private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
-
         }
-    }
+
+        private void gameList_SelectedIndexChanged(object sender, EventArgs e) {
+        }
 }
