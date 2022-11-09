@@ -243,11 +243,11 @@ namespace GameManager {
 					} 
 					if(game.Path.IndexOf(game.RJCode) != -1) {
 						if (String.IsNullOrEmpty(Settings.Instance.GameFolder)) {
-							dirsToScan.Add(System.IO.Path.GetDirectoryName(game.Path.Substring(0, game.Path.IndexOf(game.RJCode))));
+							dirsToScan.Add(System.IO.Directory.GetParent(System.IO.Path.GetDirectoryName(game.Path.Substring(0, game.Path.IndexOf(game.RJCode)))).FullName);
 						}
 						else if (!game.Path.Contains(Settings.Instance.GameFolder)) {
-							dirsToScan.Add(System.IO.Path.GetDirectoryName(game.Path.Substring(0, game.Path.IndexOf(game.RJCode))));
-						}
+							dirsToScan.Add(System.IO.Directory.GetParent(System.IO.Path.GetDirectoryName(game.Path.Substring(0, game.Path.IndexOf(game.RJCode)))).FullName);
+                        }
 					}					
 				}
 				else if(game.Path.IndexOf(game.RJCode) != -1) {

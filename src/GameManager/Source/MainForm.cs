@@ -1645,6 +1645,19 @@ namespace GameManager {
             }
         }
 
+        private void addRelevantMetadataToolStripMenuItem_Click(object sender, EventArgs e) {
+            var selectedGames = gameList.SelectedObjects.Cast<Game>();
+            var tasks = new List<Task>();
+
+            foreach (var g in selectedGames) {
+                var game = g;
+                var task = game.addRelevantMetadata();
+
+                tasks.Add(task);
+            }
+            StatusBarText = "Added relevant metadata";
+        }
+
         private void updatePathToolStripMenuItem_Click(object sender, EventArgs e) {
             var selectedGames = gameList.SelectedObjects.Cast<Game>();
 			foreach (var game in selectedGames) {
@@ -2124,5 +2137,9 @@ namespace GameManager {
 
         [DllImport("user32.dll")]
         private static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
+
+        private void gameList_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }
