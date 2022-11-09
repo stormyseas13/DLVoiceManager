@@ -48,6 +48,7 @@ namespace GameManager {
             this.removeFromDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRelevantMetadataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.actionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,9 +126,10 @@ namespace GameManager {
             this.extractCgToolStripMenuItem,
             this.removeToolStripMenuItem,
             this.toolStripSeparator4,
-            this.propertiesToolStripMenuItem});
+            this.propertiesToolStripMenuItem,
+            this.addRelevantMetadataToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(283, 346);
+            this.contextMenuStrip.Size = new System.Drawing.Size(283, 398);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             // 
             // runToolStripMenuItem
@@ -264,6 +266,13 @@ namespace GameManager {
             this.propertiesToolStripMenuItem.Text = "Properties";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
+            // addRelevantMetadataToolStripMenuItem
+            // 
+            this.addRelevantMetadataToolStripMenuItem.Name = "addRelevantMetadataToolStripMenuItem";
+            this.addRelevantMetadataToolStripMenuItem.Size = new System.Drawing.Size(282, 24);
+            this.addRelevantMetadataToolStripMenuItem.Text = "Add relevant metadata";
+            this.addRelevantMetadataToolStripMenuItem.Click += new System.EventHandler(this.addRelevantMetadataToolStripMenuItem_Click);
+            // 
             // menuStrip
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -276,7 +285,7 @@ namespace GameManager {
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip.Size = new System.Drawing.Size(1248, 38);
+            this.menuStrip.Size = new System.Drawing.Size(998, 28);
             this.menuStrip.TabIndex = 2;
             // 
             // actionToolStripMenuItem
@@ -291,7 +300,7 @@ namespace GameManager {
             this.toolStripSeparator9,
             this.exitToolStripMenuItem});
             this.actionToolStripMenuItem.Name = "actionToolStripMenuItem";
-            this.actionToolStripMenuItem.Size = new System.Drawing.Size(66, 34);
+            this.actionToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.actionToolStripMenuItem.Text = "Action";
             // 
             // addGameToolStripMenuItem
@@ -353,7 +362,7 @@ namespace GameManager {
             this.toolStripSeparator5,
             this.viewSearchBar});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 34);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // viewDetails
@@ -388,7 +397,7 @@ namespace GameManager {
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 34);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -398,7 +407,7 @@ namespace GameManager {
             this.statisticsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 34);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // statisticsToolStripMenuItem
@@ -566,6 +575,7 @@ namespace GameManager {
             this.gameList.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.gameList_CellEditStarting);
             this.gameList.CellClick += new System.EventHandler<BrightIdeasSoftware.CellClickEventArgs>(this.gameList_CellClick);
             this.gameList.SelectionChanged += new System.EventHandler(this.gameList_SelectionChanged);
+            this.gameList.SelectedIndexChanged += new System.EventHandler(this.gameList_SelectedIndexChanged);
             this.gameList.SizeChanged += new System.EventHandler(this.gameList_SizeChanged);
             this.gameList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameList_KeyDown);
             // 
@@ -862,11 +872,12 @@ namespace GameManager {
         private System.Windows.Forms.ToolStripMenuItem translateToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem updatePathToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem renameWorksFolderToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem downloadInfoToolStripMenuItem;		
+		private System.Windows.Forms.ToolStripMenuItem downloadInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem addRelevantMetadataToolStripMenuItem;
     }
 }
 
