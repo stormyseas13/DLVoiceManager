@@ -530,6 +530,30 @@ namespace GameManager {
             return task;
         }
 
+        public Task TranslateWorksPath() {
+            Task task = null;
+            var translator = new GoogleTranslate("ja", "en");
+
+            string mainPath = System.IO.Directory.GetParent(Path).ToString();
+            DirectoryInfo dir = new DirectoryInfo(mainPath);
+
+            if (!File.Exists(mainPath) && !Directory.Exists(mainPath) || mainPath == null) {
+                Console.WriteLine(File.Exists(mainPath));
+                Console.WriteLine(Directory.Exists(mainPath));
+                return null;
+            }
+
+            WorkPathTranslate worker = new WorkPathTranslate();
+            worker.directory = dir;
+            worker.task = task;
+
+            worker.FilePathTranslate();
+            worker.DirPathTranslate();
+            worker.MainPathTranslate();
+
+                return worker.task;
+        }
+
         public Task addRelevantMetadata() {
             DirectoryInfo directory = new DirectoryInfo(Path);
             Task task = null;
@@ -545,6 +569,7 @@ namespace GameManager {
                 }
 
             }
+        
 
             foreach (var f in directory.EnumerateFiles("*", SearchOption.AllDirectories)) {
 

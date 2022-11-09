@@ -1,3 +1,6 @@
+using System.Windows.Forms;
+using System.Xml.Linq;
+
 namespace GameManager {
     partial class MainForm {
         /// <summary>
@@ -48,6 +51,7 @@ namespace GameManager {
             this.removeFromDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.translateWork = new System.Windows.Forms.ToolStripMenuItem();
             this.addRelevantMetadataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.actionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +78,6 @@ namespace GameManager {
             this.addGameDialog = new System.Windows.Forms.OpenFileDialog();
             this.headerFormatStyle = new BrightIdeasSoftware.HeaderFormatStyle();
             this.splitContainer = new GameManager.TweakedSplitContainer();
-            this.searchBar = new GameManager.SearchBar();
             this.gameList = new BrightIdeasSoftware.ObjectListView();
             this.imageColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.rjCodeColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -94,6 +97,7 @@ namespace GameManager {
             this.tagsColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.hvdbtagsColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.commentsColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.searchBar = new GameManager.SearchBar();
             this.gameEditControl = new GameManager.GameEditControl();
             this.contextMenuStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -127,6 +131,7 @@ namespace GameManager {
             this.removeToolStripMenuItem,
             this.toolStripSeparator4,
             this.propertiesToolStripMenuItem,
+            this.translateWork,
             this.addRelevantMetadataToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
             this.contextMenuStrip.Size = new System.Drawing.Size(283, 398);
@@ -233,7 +238,8 @@ namespace GameManager {
             // 
             this.removeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeFromListToolStripMenuItem,
-            this.removeFromDiskToolStripMenuItem});
+            this.removeFromDiskToolStripMenuItem
+    });
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
             this.removeToolStripMenuItem.Size = new System.Drawing.Size(282, 24);
             this.removeToolStripMenuItem.Text = "Remove";
@@ -266,6 +272,13 @@ namespace GameManager {
             this.propertiesToolStripMenuItem.Text = "Properties";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
+            // translateWork
+            // 
+            this.translateWork.Name = "translateWork";
+            this.translateWork.Size = new System.Drawing.Size(282, 24);
+            this.translateWork.Text = "Translate work";
+            this.translateWork.Click += new System.EventHandler(this.translateWork_Click);
+            //
             // addRelevantMetadataToolStripMenuItem
             // 
             this.addRelevantMetadataToolStripMenuItem.Name = "addRelevantMetadataToolStripMenuItem";
@@ -449,21 +462,21 @@ namespace GameManager {
             // 
             this.addGameDialog.Filter = "Executable or Archive (*.exe; *.swf; *.zip; *.rar)|*.exe; *.swf; *.zip; *.rar|All" +
     " Files (*.*)|*.*";
-            // 
-            // headerFormatStyle
-            // 
-            headerStateStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(75)))), ((int)(((byte)(73)))));
-            headerStateStyle1.ForeColor = System.Drawing.Color.White;
-            headerStateStyle1.FrameColor = System.Drawing.Color.White;
+    // 
+    // headerFormatStyle
+    // 
+    headerStateStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(75)))), ((int)(((byte)(73)))));
+    headerStateStyle1.ForeColor = System.Drawing.Color.White;
+    headerStateStyle1.FrameColor = System.Drawing.Color.White;
             this.headerFormatStyle.Hot = headerStateStyle1;
-            headerStateStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(75)))), ((int)(((byte)(73)))));
-            headerStateStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
-            headerStateStyle2.FrameColor = System.Drawing.Color.Black;
-            headerStateStyle2.FrameWidth = 1F;
+    headerStateStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(75)))), ((int)(((byte)(73)))));
+    headerStateStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(167)))), ((int)(((byte)(167)))));
+    headerStateStyle2.FrameColor = System.Drawing.Color.Black;
+    headerStateStyle2.FrameWidth = 1F;
             this.headerFormatStyle.Normal = headerStateStyle2;
-            headerStateStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(75)))), ((int)(((byte)(73)))));
-            headerStateStyle3.ForeColor = System.Drawing.Color.White;
-            headerStateStyle3.FrameColor = System.Drawing.Color.White;
+    headerStateStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(75)))), ((int)(((byte)(73)))));
+    headerStateStyle3.ForeColor = System.Drawing.Color.White;
+    headerStateStyle3.FrameColor = System.Drawing.Color.White;
             this.headerFormatStyle.Pressed = headerStateStyle3;
             // 
             // splitContainer
@@ -478,8 +491,8 @@ namespace GameManager {
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.searchBar);
             this.splitContainer.Panel1.Controls.Add(this.gameList);
+            this.splitContainer.Panel1.Controls.Add(this.searchBar);
             this.splitContainer.Panel1MinSize = 30;
             // 
             // splitContainer.Panel2
@@ -495,21 +508,6 @@ namespace GameManager {
             this.splitContainer.SplitterWidth = 15;
             this.splitContainer.TabIndex = 4;
             this.splitContainer.TabStop = false;
-            // 
-            // searchBar
-            // 
-            this.searchBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(236)))));
-            this.searchBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchBar.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.searchBar.Location = new System.Drawing.Point(0, 521);
-            this.searchBar.Margin = new System.Windows.Forms.Padding(5);
-            this.searchBar.Name = "searchBar";
-            this.searchBar.Size = new System.Drawing.Size(661, 44);
-            this.searchBar.TabIndex = 1;
-            this.searchBar.Visible = false;
-            this.searchBar.SearchTextChanged += new System.EventHandler(this.searchBar_SearchTextChanged);
-            this.searchBar.CommandKeyPressed += new System.Windows.Forms.KeyEventHandler(this.searchBar_CommandKeyPressed);
-            this.searchBar.VisibleChanged += new System.EventHandler(this.searchBar_VisibleChanged);
             // 
             // gameList
             // 
@@ -564,7 +562,7 @@ namespace GameManager {
             this.gameList.Name = "gameList";
             this.gameList.RowHeight = 50;
             this.gameList.ShowCommandMenuOnRightClick = true;
-            this.gameList.Size = new System.Drawing.Size(661, 565);
+            this.gameList.Size = new System.Drawing.Size(661, 521);
             this.gameList.SortGroupItemsByPrimaryColumn = false;
             this.gameList.TabIndex = 0;
             this.gameList.UseCompatibleStateImageBehavior = false;
@@ -762,6 +760,21 @@ namespace GameManager {
             this.commentsColumn.Text = "Comments";
             this.commentsColumn.UseFiltering = false;
             // 
+            // searchBar
+            // 
+            this.searchBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(236)))));
+            this.searchBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.searchBar.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.searchBar.Location = new System.Drawing.Point(0, 521);
+            this.searchBar.Margin = new System.Windows.Forms.Padding(5);
+            this.searchBar.Name = "searchBar";
+            this.searchBar.Size = new System.Drawing.Size(661, 44);
+            this.searchBar.TabIndex = 1;
+            this.searchBar.Visible = false;
+            this.searchBar.SearchTextChanged += new System.EventHandler(this.searchBar_SearchTextChanged);
+            this.searchBar.CommandKeyPressed += new System.Windows.Forms.KeyEventHandler(this.searchBar_CommandKeyPressed);
+            this.searchBar.VisibleChanged += new System.EventHandler(this.searchBar_VisibleChanged);
+            // 
             // gameEditControl
             // 
             this.gameEditControl.BackColor = System.Drawing.Color.Transparent;
@@ -806,78 +819,79 @@ namespace GameManager {
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        #endregion
-
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private BrightIdeasSoftware.HeaderFormatStyle headerFormatStyle;
-        private BrightIdeasSoftware.ObjectListView gameList;
-        private TweakedSplitContainer splitContainer;
-        private GameEditControl gameEditControl;
-        private System.Windows.Forms.ToolStripMenuItem actionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addGameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem extractCgGameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.OpenFileDialog extractionFileDialog;
-        private System.Windows.Forms.OpenFileDialog addGameDialog;
-        private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
-        private System.Windows.Forms.ToolStripStatusLabel statusStripLabel;
-        private System.Windows.Forms.ToolStripMenuItem addGamesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewDetails;
-        private System.Windows.Forms.ToolStripMenuItem viewTiles;
-        private System.Windows.Forms.ToolStripMenuItem extractCgToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
-        private SearchBar searchBar;
-        private System.Windows.Forms.ToolStripMenuItem openInExplorerMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem openEngDLSiteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openJpDLSiteToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem openHVDBToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem filterOnCircleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem viewSearchBar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private BrightIdeasSoftware.OLVColumn imageColumn;
-        private BrightIdeasSoftware.OLVColumn rjCodeColumn;
-        private BrightIdeasSoftware.OLVColumn titleColumn;
-        private BrightIdeasSoftware.OLVColumn ratingColumn;
-        private BrightIdeasSoftware.OLVColumn dlSiteRatingColumn;
-        private BrightIdeasSoftware.OLVColumn circleColumn;
-        private BrightIdeasSoftware.OLVColumn releasedColumn;
-        private BrightIdeasSoftware.OLVColumn lastPlayedColumn;
-        private BrightIdeasSoftware.OLVColumn timePlayedColumn;
-        private BrightIdeasSoftware.OLVColumn tagsColumn;
-		private BrightIdeasSoftware.OLVColumn hvdbtagsColumn;
-		private BrightIdeasSoftware.OLVColumn cvsColumn;
-        private BrightIdeasSoftware.OLVColumn timesPlayedColumn;
-        private BrightIdeasSoftware.OLVColumn commentsColumn;
-        private BrightIdeasSoftware.OLVColumn addedColumn;
-        private BrightIdeasSoftware.OLVColumn sizeColumn;
-        private BrightIdeasSoftware.OLVColumn categoryColumn;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeFromListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeFromDiskToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
-        private BrightIdeasSoftware.OLVColumn languageColumn;
-        private System.Windows.Forms.ToolStripMenuItem findDuplicatesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem translateToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem updatePathToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem renameWorksFolderToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem downloadInfoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripMenuItem addRelevantMetadataToolStripMenuItem;
     }
+
+    #endregion
+
+    private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+    private System.Windows.Forms.MenuStrip menuStrip;
+    private System.Windows.Forms.StatusStrip statusStrip;
+    private BrightIdeasSoftware.HeaderFormatStyle headerFormatStyle;
+    private BrightIdeasSoftware.ObjectListView gameList;
+    private TweakedSplitContainer splitContainer;
+    private GameEditControl gameEditControl;
+    private System.Windows.Forms.ToolStripMenuItem actionToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem addGameToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem extractCgGameToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+    private System.Windows.Forms.OpenFileDialog extractionFileDialog;
+    private System.Windows.Forms.OpenFileDialog addGameDialog;
+    private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
+    private System.Windows.Forms.ToolStripStatusLabel statusStripLabel;
+    private System.Windows.Forms.ToolStripMenuItem addGamesToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem viewDetails;
+    private System.Windows.Forms.ToolStripMenuItem viewTiles;
+    private System.Windows.Forms.ToolStripMenuItem extractCgToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
+    private SearchBar searchBar;
+    private System.Windows.Forms.ToolStripMenuItem openInExplorerMenuItem;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.ToolStripMenuItem openEngDLSiteToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem openJpDLSiteToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem openHVDBToolStripMenuItem;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.ToolStripMenuItem filterOnCircleToolStripMenuItem;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+    private System.Windows.Forms.ToolStripMenuItem viewSearchBar;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+    private BrightIdeasSoftware.OLVColumn imageColumn;
+    private BrightIdeasSoftware.OLVColumn rjCodeColumn;
+    private BrightIdeasSoftware.OLVColumn titleColumn;
+    private BrightIdeasSoftware.OLVColumn ratingColumn;
+    private BrightIdeasSoftware.OLVColumn dlSiteRatingColumn;
+    private BrightIdeasSoftware.OLVColumn circleColumn;
+    private BrightIdeasSoftware.OLVColumn releasedColumn;
+    private BrightIdeasSoftware.OLVColumn lastPlayedColumn;
+    private BrightIdeasSoftware.OLVColumn timePlayedColumn;
+    private BrightIdeasSoftware.OLVColumn tagsColumn;
+    private BrightIdeasSoftware.OLVColumn hvdbtagsColumn;
+    private BrightIdeasSoftware.OLVColumn cvsColumn;
+    private BrightIdeasSoftware.OLVColumn timesPlayedColumn;
+    private BrightIdeasSoftware.OLVColumn commentsColumn;
+    private BrightIdeasSoftware.OLVColumn addedColumn;
+    private BrightIdeasSoftware.OLVColumn sizeColumn;
+    private BrightIdeasSoftware.OLVColumn categoryColumn;
+    private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem removeFromListToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem removeFromDiskToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
+    private BrightIdeasSoftware.OLVColumn languageColumn;
+    private System.Windows.Forms.ToolStripMenuItem findDuplicatesToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem translateToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem updatePathToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem renameWorksFolderToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem downloadInfoToolStripMenuItem;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+    private System.Windows.Forms.ToolStripMenuItem translateWork;
+    private System.Windows.Forms.ToolStripMenuItem addRelevantMetadataToolStripMenuItem;
+}
 }
 
