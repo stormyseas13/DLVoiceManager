@@ -8,6 +8,7 @@ I only spend time on this project to learn C#. So don't expect much.
 - Cleaned up the project with the use of nuget packages
 - Updated componetes to latest versions e.g. DotNET 4.8 Framework, objectlistview, SQLite.
 - Fixed so category and tags displays correctly with the new dlsite website.
+- Added translation of folder items and add relevant metadata to audio files.
 
 ### **All credit to the previous maker and modders.**
 ### **Previosly built by Lux and thereafter futher modifyed by Phantasmx.**
